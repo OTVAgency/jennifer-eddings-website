@@ -7,14 +7,14 @@ WordPress theme for **SiteGround**, plus a static **GitHub Pages** preview for c
 | Path | Purpose |
 |------|---------|
 | `theme/jennifer-eddings/` | Installable WordPress theme (zip & upload on SiteGround) |
-| `preview/` | Static HTML mirror — client share link via GitHub Pages |
+| `docs/` (GitHub Pages) / `preview/` | Static HTML mirror — client share link via GitHub Pages |
 | `_archive-openai-sites/` | Archived Next.js / OpenAI Sites first pass (not for production) |
 
 ## Client preview
 
-After Pages is enabled from the `/preview` folder:
+After Pages is enabled from the `/docs` folder on `main`:
 
-`https://<org-or-user>.github.io/jennifer-eddings-website/`
+`https://otvagency.github.io/jennifer-eddings-website/`
 
 (Exact URL depends on the GitHub account that owns the repo.)
 
