@@ -15,3 +15,10 @@ theme/*.zip
 .next/
 dist/
 .wrangler/
+
+# Raw photo drops (use optimized images/jen-*.jpg)
+docs/photos/*.HEIC
+docs/photos/*.JPG
+docs/photos/web/
+docs/photos/jen-hero-temp.jpg
+*.HEIC
