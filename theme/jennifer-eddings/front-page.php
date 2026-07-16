@@ -32,7 +32,7 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 		</div>
 	</div>
 	<aside class="hero-media">
-		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings recording The Call Light Collective', 'jennifer-eddings' ); ?>" width="1200" height="1500">
+		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings with The Call Light Collective', 'jennifer-eddings' ); ?>" width="1200" height="1600">
 	</aside>
 </section>
 
