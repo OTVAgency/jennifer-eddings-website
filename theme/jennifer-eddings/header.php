@@ -19,7 +19,14 @@
 		<img class="logo-mark" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/clc-mark.png' ); ?>" alt="<?php esc_attr_e( 'Call Light Collective', 'jennifer-eddings' ); ?>" width="56" height="56">
 		<span>Jennifer Eddings</span>
 	</a>
-	<nav class="nav" aria-label="<?php esc_attr_e( 'Primary', 'jennifer-eddings' ); ?>">
+	<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="<?php esc_attr_e( 'Open menu', 'jennifer-eddings' ); ?>">
+		<span class="nav-toggle-bars" aria-hidden="true">
+			<span class="nav-toggle-bar"></span>
+			<span class="nav-toggle-bar"></span>
+			<span class="nav-toggle-bar"></span>
+		</span>
+	</button>
+	<nav class="nav" id="site-nav" aria-label="<?php esc_attr_e( 'Primary', 'jennifer-eddings' ); ?>">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'jennifer-eddings' ); ?></a>
 		<a href="<?php echo esc_url( home_url( '/#about' ) ); ?>"><?php esc_html_e( 'About', 'jennifer-eddings' ); ?></a>
 		<a href="<?php echo esc_url( home_url( '/#collaborate' ) ); ?>"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></a>
