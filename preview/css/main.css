@@ -61,7 +61,7 @@ em {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.2rem clamp(1.25rem, 4vw, 3rem);
+  padding: 0.85rem clamp(1.25rem, 4vw, 3rem);
   background: rgba(247, 241, 235, 0.88);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line-gold);
@@ -81,12 +81,11 @@ em {
 }
 
 .logo-mark {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0;
+  object-fit: contain;
   flex-shrink: 0;
-  box-shadow: 0 0 0 1px rgba(200, 145, 45, 0.35);
 }
 
 .nav {
