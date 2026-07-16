@@ -20,10 +20,11 @@
 		<span>Jennifer Eddings</span>
 	</a>
 	<nav class="nav" aria-label="<?php esc_attr_e( 'Primary', 'jennifer-eddings' ); ?>">
-		<a href="#top" aria-current="page"><?php esc_html_e( 'Home', 'jennifer-eddings' ); ?></a>
-		<a href="#about"><?php esc_html_e( 'About', 'jennifer-eddings' ); ?></a>
-		<a href="#collaborate"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></a>
-		<a href="#collective"><?php esc_html_e( 'Collective', 'jennifer-eddings' ); ?></a>
-		<a href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'jennifer-eddings' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/#about' ) ); ?>"><?php esc_html_e( 'About', 'jennifer-eddings' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/#collaborate' ) ); ?>"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/#collective' ) ); ?>"><?php esc_html_e( 'Collective', 'jennifer-eddings' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/appearances/' ) ); ?>"><?php esc_html_e( 'Appearances', 'jennifer-eddings' ); ?></a>
+		<a href="<?php echo esc_url( home_url( '/#connect' ) ); ?>"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
 	</nav>
 </header>
