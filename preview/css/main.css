@@ -622,20 +622,42 @@ em {
 .filter-chip {
   display: inline-flex;
   align-items: center;
+  margin: 0;
   padding: 0.45rem 0.9rem;
   border: 1px solid var(--line-gold);
+  font-family: inherit;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   background: var(--cream);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.filter-chip.is-active {
+.filter-chip:hover {
+  border-color: var(--plum-deep);
+  color: var(--plum-deep);
+}
+
+.filter-chip.is-active,
+.filter-chip.is-active:hover {
   background: var(--plum-deep);
   border-color: var(--plum-deep);
   color: var(--cream);
+}
+
+.appearance-card[hidden] {
+  display: none;
+}
+
+.appearance-empty {
+  margin: 0 0 2.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--muted);
 }
 
 .appearance-grid {

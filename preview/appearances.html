@@ -37,15 +37,17 @@
 
   <section class="section" style="padding-top: 0;">
     <div class="section-inner">
-      <div class="appearance-filters" aria-label="Filter appearances">
-        <span class="filter-chip is-active">All</span>
-        <span class="filter-chip">Podcast</span>
-        <span class="filter-chip">Speaking</span>
-        <span class="filter-chip">Feature</span>
+      <div class="appearance-filters" role="group" aria-label="Filter appearances">
+        <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-chip" data-filter="podcast" aria-pressed="false">Podcast</button>
+        <button type="button" class="filter-chip" data-filter="speaking" aria-pressed="false">Speaking</button>
+        <button type="button" class="filter-chip" data-filter="feature" aria-pressed="false">Feature</button>
       </div>
 
+      <p class="appearance-empty" hidden>No appearances in this category yet.</p>
+
       <div class="appearance-grid">
-        <article class="appearance-card">
+        <article class="appearance-card" data-category="podcast">
           <a class="appearance-media" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">
             <img src="images/jen-speak.jpg" alt="" width="1200" height="1600">
             <span class="appearance-tag">Podcast</span>
@@ -58,7 +60,7 @@
           </div>
         </article>
 
-        <article class="appearance-card">
+        <article class="appearance-card" data-category="podcast">
           <a class="appearance-media" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">
             <img src="images/jen-about.jpg" alt="" width="1000" height="1250">
             <span class="appearance-tag">Podcast</span>
@@ -71,7 +73,7 @@
           </div>
         </article>
 
-        <article class="appearance-card">
+        <article class="appearance-card" data-category="podcast">
           <a class="appearance-media" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">
             <img src="images/jen-lifestyle.jpg" alt="" width="900" height="900">
             <span class="appearance-tag">Podcast</span>
@@ -84,7 +86,7 @@
           </div>
         </article>
 
-        <article class="appearance-card">
+        <article class="appearance-card" data-category="podcast">
           <a class="appearance-media" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">
             <img src="images/jen-duo.jpg" alt="" width="900" height="1100">
             <span class="appearance-tag">Podcast</span>
@@ -97,7 +99,7 @@
           </div>
         </article>
 
-        <article class="appearance-card">
+        <article class="appearance-card" data-category="podcast">
           <a class="appearance-media" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">
             <img src="images/jen-stage.jpg" alt="" width="1200" height="1500">
             <span class="appearance-tag">Podcast</span>
@@ -110,7 +112,7 @@
           </div>
         </article>
 
-        <article class="appearance-card">
+        <article class="appearance-card" data-category="speaking">
           <div class="appearance-media">
             <img src="images/jen-stage.jpg" alt="Jennifer Eddings speaking on stage" width="1200" height="1500">
             <span class="appearance-tag">Speaking</span>
@@ -139,5 +141,6 @@
     <p>© 2026 Jennifer Eddings</p>
     <p>The Call Light Collective</p>
   </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

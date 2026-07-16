@@ -30,6 +30,15 @@ $query = new WP_Query(
 
 <section class="section" style="padding-top: 0;">
 	<div class="section-inner">
+		<div class="appearance-filters" role="group" aria-label="<?php esc_attr_e( 'Filter appearances', 'jennifer-eddings' ); ?>">
+			<button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true"><?php esc_html_e( 'All', 'jennifer-eddings' ); ?></button>
+			<button type="button" class="filter-chip" data-filter="podcast" aria-pressed="false"><?php esc_html_e( 'Podcast', 'jennifer-eddings' ); ?></button>
+			<button type="button" class="filter-chip" data-filter="speaking" aria-pressed="false"><?php esc_html_e( 'Speaking', 'jennifer-eddings' ); ?></button>
+			<button type="button" class="filter-chip" data-filter="feature" aria-pressed="false"><?php esc_html_e( 'Feature', 'jennifer-eddings' ); ?></button>
+		</div>
+
+		<p class="appearance-empty" hidden><?php esc_html_e( 'No appearances in this category yet.', 'jennifer-eddings' ); ?></p>
+
 		<?php if ( $query->have_posts() ) : ?>
 			<div class="appearance-grid">
 				<?php
@@ -37,13 +46,14 @@ $query = new WP_Query(
 					$query->the_post();
 					$cats  = get_the_category();
 					$label = $cats ? $cats[0]->name : __( 'Story', 'jennifer-eddings' );
+					$slug  = $cats ? sanitize_title( $cats[0]->slug ) : 'story';
 					$link  = get_permalink();
 					$ext   = get_post_meta( get_the_ID(), 'appearance_external_url', true );
 					if ( $ext ) {
 						$link = $ext;
 					}
 					?>
-					<article <?php post_class( 'appearance-card' ); ?>>
+					<article <?php post_class( 'appearance-card' ); ?> data-category="<?php echo esc_attr( $slug ); ?>">
 						<a class="appearance-media" href="<?php echo esc_url( $link ); ?>" <?php echo $ext ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>>
 							<?php if ( has_post_thumbnail() ) : ?>
 								<?php the_post_thumbnail( 'large' ); ?>
@@ -64,7 +74,7 @@ $query = new WP_Query(
 			<?php wp_reset_postdata(); ?>
 		<?php else : ?>
 			<div class="appearance-grid">
-				<article class="appearance-card">
+				<article class="appearance-card" data-category="podcast">
 					<a class="appearance-media" href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">
 						<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-speak.jpg' ); ?>" alt="" width="1200" height="1600">
 						<span class="appearance-tag"><?php esc_html_e( 'Podcast', 'jennifer-eddings' ); ?></span>
