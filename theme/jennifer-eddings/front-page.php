@@ -56,7 +56,7 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 					<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-lifestyle.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings', 'jennifer-eddings' ); ?>" width="1000" height="750">
 				</figure>
 				<figure class="mosaic-side mosaic-side-b">
-					<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-duo.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer with a collaborator', 'jennifer-eddings' ); ?>" width="900" height="900">
+					<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-duo.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings at the roundtable', 'jennifer-eddings' ); ?>" width="900" height="900">
 				</figure>
 			</div>
 		</div>
@@ -97,8 +97,8 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 		</div>
 
 		<figure class="speak-banner">
-			<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-speak.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer with a collaborator', 'jennifer-eddings' ); ?>" width="1400" height="900">
-			<figcaption><?php esc_html_e( 'Connection in the room — partnerships that feel human.', 'jennifer-eddings' ); ?></figcaption>
+			<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-speak.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings at the roundtable', 'jennifer-eddings' ); ?>" width="1200" height="1600">
+			<figcaption><?php esc_html_e( 'At the mic — stories told in the room.', 'jennifer-eddings' ); ?></figcaption>
 		</figure>
 
 		<div class="collective-block" id="collective">
