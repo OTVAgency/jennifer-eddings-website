@@ -1,6 +1,6 @@
 <?php
 /**
- * Header template.
+ * Header — Juliette-inspired personal brand layout.
  *
  * @package Jennifer_Eddings
  */
@@ -14,18 +14,13 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<main class="page-shell">
-	<header class="topbar">
-		<div class="brand-lockup">
-			<span class="brand-dot" aria-hidden="true"></span>
-			<div>
-				<p class="topbar-label">Jennifer Eddings</p>
-				<p class="topbar-subtitle">The Call Light Collective</p>
-			</div>
-		</div>
-		<nav class="topnav" aria-label="<?php esc_attr_e( 'Primary', 'jennifer-eddings' ); ?>">
-			<a href="#story"><?php esc_html_e( 'About', 'jennifer-eddings' ); ?></a>
-			<a href="#collective"><?php esc_html_e( 'The Collective', 'jennifer-eddings' ); ?></a>
-			<a href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
-		</nav>
-	</header>
+<header class="site-header">
+	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">Jennifer Eddings</a>
+	<nav class="nav" aria-label="<?php esc_attr_e( 'Primary', 'jennifer-eddings' ); ?>">
+		<a href="#top" aria-current="page"><?php esc_html_e( 'Home', 'jennifer-eddings' ); ?></a>
+		<a href="#about"><?php esc_html_e( 'About', 'jennifer-eddings' ); ?></a>
+		<a href="#collaborate"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></a>
+		<a href="#collective"><?php esc_html_e( 'Collective', 'jennifer-eddings' ); ?></a>
+		<a href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
+	</nav>
+</header>

@@ -43,16 +43,9 @@ function je_enqueue_assets() {
 	$uri = get_template_directory_uri();
 
 	wp_enqueue_style(
-		'je-fonts',
-		'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap',
-		array(),
-		null
-	);
-
-	wp_enqueue_style(
 		'je-main',
 		$uri . '/assets/css/main.css',
-		array( 'je-fonts' ),
+		array(),
 		JE_THEME_VERSION
 	);
 
