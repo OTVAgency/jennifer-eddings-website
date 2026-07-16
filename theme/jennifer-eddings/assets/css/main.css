@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
-  --bg: #fffaf7;
-  --ink: #2d2a26;
-  --muted: #6b6560;
-  --accent: #c48b7b;
-  --line: rgba(45, 42, 38, 0.12);
-  --surface: #f3ebe4;
+  --bg: #f7f1eb;
+  --bg-deep: #efe4da;
+  --ink: #24192b;
+  --muted: #6d6073;
+  --plum: #563764;
+  --plum-deep: #24192b;
+  --plum-soft: #704782;
+  --gold: #c8912d;
+  --gold-soft: #e0b45a;
+  --cream: #fffaf5;
+  --line: rgba(36, 25, 43, 0.12);
+  --line-gold: rgba(200, 145, 45, 0.45);
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Ibarra Real Nova", Georgia, serif;
 }
@@ -23,7 +29,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 70% 45% at 100% 0%, rgba(200, 145, 45, 0.14), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 0% 30%, rgba(112, 71, 130, 0.1), transparent 50%),
+    var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 1.05rem;
@@ -52,15 +61,32 @@ em {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.35rem clamp(1.25rem, 4vw, 3rem);
-  border-bottom: 1px solid transparent;
+  padding: 1.2rem clamp(1.25rem, 4vw, 3rem);
+  background: rgba(247, 241, 235, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line-gold);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .logo {
   font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.logo::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background: var(--gold);
+  vertical-align: 0.05em;
+  box-shadow: 0 0 0 3px rgba(200, 145, 45, 0.2);
 }
 
 .nav {
@@ -76,19 +102,20 @@ em {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .nav a:hover,
 .nav a[aria-current="page"] {
-  color: var(--accent);
+  color: var(--plum-soft);
 }
 
-/* —— Hero: Juliette split —— */
+/* —— Hero —— */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: calc(100vh - 4.5rem);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 3px solid var(--gold);
 }
 
 .hero-copy {
@@ -96,7 +123,19 @@ em {
   flex-direction: column;
   justify-content: center;
   padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4.5rem);
-  background: var(--bg);
+  background:
+    linear-gradient(135deg, var(--cream) 0%, var(--bg) 55%, #efe6f0 100%);
+  position: relative;
+}
+
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold), var(--plum-soft));
 }
 
 .hero-name {
@@ -106,6 +145,7 @@ em {
   font-weight: 900;
   letter-spacing: -0.045em;
   line-height: 0.92;
+  color: var(--plum-deep);
 }
 
 .hero-role {
@@ -116,11 +156,13 @@ em {
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.12;
+  color: var(--plum);
 }
 
 .hero-role .ital {
   font-style: italic;
   font-weight: 400;
+  color: var(--gold);
 }
 
 .hero-intro {
@@ -138,7 +180,7 @@ em {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem 1.75rem;
+  gap: 1rem 1.5rem;
   margin-top: 2.25rem;
 }
 
@@ -147,20 +189,43 @@ em {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 0.2rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.25rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .link-arrow:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--plum-soft);
+  border-color: var(--plum-soft);
+}
+
+.link-arrow.link-solid {
+  background: var(--plum-deep);
+  color: var(--cream);
+  border: none;
+  padding: 0.85rem 1.35rem;
+}
+
+.link-arrow.link-solid:hover {
+  background: var(--plum);
+  color: var(--cream);
 }
 
 .hero-media {
   position: relative;
   min-height: 420px;
-  background: var(--surface);
+  background: var(--plum-deep);
   overflow: hidden;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(36, 25, 43, 0.15), transparent 45%),
+    linear-gradient(0deg, rgba(200, 145, 45, 0.12), transparent 40%);
+  pointer-events: none;
 }
 
 .hero-media img {
@@ -172,9 +237,10 @@ em {
   inset: 0;
 }
 
-/* —— Editorial sections —— */
+/* —— Sections —— */
 .section {
   padding: clamp(4rem, 9vw, 7.5rem) clamp(1.25rem, 5vw, 4rem);
+  position: relative;
 }
 
 .section-inner {
@@ -185,10 +251,10 @@ em {
 .eyebrow {
   margin: 0 0 0.75rem;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--gold);
 }
 
 .display-serif {
@@ -199,10 +265,17 @@ em {
   letter-spacing: -0.03em;
   line-height: 1.12;
   max-width: 16ch;
+  color: var(--plum-deep);
 }
 
 .display-serif .ital {
   font-style: italic;
+  color: var(--plum-soft);
+}
+
+.display-serif strong {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .display-sans {
@@ -212,6 +285,7 @@ em {
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.95;
+  color: var(--plum-deep);
 }
 
 .lead {
@@ -250,13 +324,19 @@ em {
 .about-mosaic figure {
   margin: 0;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--plum-deep);
+  outline: 1px solid var(--line-gold);
 }
 
 .about-mosaic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-mosaic figure:hover img {
+  transform: scale(1.03);
 }
 
 .mosaic-main {
@@ -268,44 +348,70 @@ em {
   object-position: center top;
 }
 
-.speak-banner {
-  margin: 3rem 0 0;
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.speak-banner img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-.speak-banner figcaption {
-  margin: 0.85rem 0 0;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .stat-row {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 2.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line-gold);
+  border-bottom: 1px solid var(--line-gold);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--plum);
 }
 
-/* Collective / services */
+.stat-row span {
+  position: relative;
+}
+
+.stat-row span:not(:last-child)::after {
+  content: "";
+  display: none;
+}
+
+/* Collaborate */
+.band-plum {
+  background:
+    linear-gradient(160deg, #2d2135 0%, var(--plum-deep) 55%, #1a1220 100%);
+  color: var(--cream);
+}
+
+.band-plum .eyebrow {
+  color: var(--gold-soft);
+}
+
+.band-plum .display-sans,
+.band-plum .display-serif,
+.band-plum .service-card h3 {
+  color: var(--cream);
+}
+
+.band-plum .lead,
+.band-plum .service-card p {
+  color: rgba(255, 250, 245, 0.72);
+}
+
+.band-plum .service-kicker {
+  color: var(--gold);
+}
+
+.band-plum .service-card {
+  border-top-color: rgba(200, 145, 45, 0.35);
+}
+
+.band-plum .link-arrow {
+  color: var(--cream);
+  border-bottom-color: var(--gold);
+}
+
+.band-plum .speak-banner figcaption {
+  color: rgba(255, 250, 245, 0.55);
+}
+
 .services-head {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -322,16 +428,16 @@ em {
 
 .service-card {
   padding: 1.75rem 0;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line-gold);
 }
 
 .service-kicker {
   margin: 0;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--gold);
 }
 
 .service-card h3 {
@@ -348,6 +454,29 @@ em {
   font-size: 0.98rem;
 }
 
+.speak-banner {
+  margin: 3rem 0 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  outline: 1px solid rgba(200, 145, 45, 0.35);
+}
+
+.speak-banner img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.speak-banner figcaption {
+  margin: 0.85rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .collective-block {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -355,12 +484,13 @@ em {
   align-items: center;
   margin-top: 3.5rem;
   padding-top: 3rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(200, 145, 45, 0.35);
 }
 
 .video-frame {
   background: #1a1220;
   overflow: hidden;
+  outline: 1px solid rgba(200, 145, 45, 0.35);
 }
 
 .video-frame video {
@@ -371,7 +501,8 @@ em {
 
 /* Connect */
 .connect {
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, var(--bg-deep), var(--cream));
 }
 
 .connect-grid {
@@ -387,8 +518,8 @@ em {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
-  border-bottom: 1px solid var(--line);
+  color: var(--plum);
+  border-bottom: 2px solid var(--line-gold);
   padding-bottom: 0.2rem;
 }
 
@@ -406,9 +537,10 @@ em {
   align-items: baseline;
   gap: 1rem;
   padding: 1.1rem 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-gold);
   font-size: 0.95rem;
   font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .social-list a span {
@@ -420,7 +552,7 @@ em {
 }
 
 .social-list a:hover {
-  color: var(--accent);
+  color: var(--plum-soft);
 }
 
 .site-footer {
@@ -433,12 +565,21 @@ em {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
+  color: rgba(255, 250, 245, 0.65);
+  background: var(--plum-deep);
+  border-top: 3px solid var(--gold);
 }
 
 .site-footer p {
   margin: 0;
+}
+
+.clc-mark {
+  width: 3.5rem;
+  height: auto;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 12px rgba(200, 145, 45, 0.35));
 }
 
 @media (max-width: 900px) {
@@ -476,5 +617,13 @@ em {
 
   .hero-name {
     font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .hero-copy::before {
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--plum-soft));
   }
 }

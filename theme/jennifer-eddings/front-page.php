@@ -27,12 +27,12 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 			<?php esc_html_e( 'BSN, RN, NPD-BC. Host of The Call Light Collective. I create spaces where nurses and leaders feel seen, supported, and still able to laugh.', 'jennifer-eddings' ); ?>
 		</p>
 		<div class="hero-actions">
-			<a class="link-arrow" href="#about"><?php esc_html_e( 'About me', 'jennifer-eddings' ); ?></a>
-			<a class="link-arrow" href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
+			<a class="link-arrow link-solid" href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
+			<a class="link-arrow" href="#collective"><?php esc_html_e( 'The Collective', 'jennifer-eddings' ); ?></a>
 		</div>
 	</div>
 	<aside class="hero-media">
-		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings', 'jennifer-eddings' ); ?>" width="1200" height="1500">
+		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings recording The Call Light Collective', 'jennifer-eddings' ); ?>" width="1200" height="1500">
 	</aside>
 </section>
 
@@ -68,10 +68,11 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 	</div>
 </section>
 
-<section class="section" id="collaborate" style="padding-top: 0;">
+<section class="section band-plum" id="collaborate">
 	<div class="section-inner">
 		<div class="services-head">
 			<div>
+				<img class="clc-mark" src="<?php echo esc_url( $theme_uri . '/assets/images/clc-monogram.png' ); ?>" alt="" width="80" height="80">
 				<p class="eyebrow"><?php esc_html_e( 'Explore', 'jennifer-eddings' ); ?></p>
 				<h2 class="display-sans"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></h2>
 			</div>
@@ -96,13 +97,13 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 		</div>
 
 		<figure class="speak-banner">
-			<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-speak.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings speaking on stage', 'jennifer-eddings' ); ?>" width="1400" height="900">
-			<figcaption><?php esc_html_e( 'On stage — storytelling, leadership, and culture in the room.', 'jennifer-eddings' ); ?></figcaption>
+			<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-speak.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer with a collaborator', 'jennifer-eddings' ); ?>" width="1400" height="900">
+			<figcaption><?php esc_html_e( 'Connection in the room — partnerships that feel human.', 'jennifer-eddings' ); ?></figcaption>
 		</figure>
 
 		<div class="collective-block" id="collective">
 			<div class="video-frame">
-				<video controls playsinline preload="metadata" poster="<?php echo esc_url( $theme_uri . '/assets/images/jen-speak.jpg' ); ?>">
+				<video controls playsinline preload="metadata" poster="<?php echo esc_url( $theme_uri . '/assets/images/jen-stage.jpg' ); ?>">
 					<source src="<?php echo esc_url( $theme_uri . '/assets/video/call-light-intro.mp4' ); ?>" type="video/mp4">
 					<?php esc_html_e( 'Your browser does not support embedded video.', 'jennifer-eddings' ); ?>
 				</video>
