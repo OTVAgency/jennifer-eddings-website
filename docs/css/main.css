@@ -71,22 +71,22 @@ em {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.logo::before {
-  content: "";
-  display: inline-block;
-  width: 0.55rem;
-  height: 0.55rem;
-  margin-right: 0.55rem;
+.logo-mark {
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  background: var(--gold);
-  vertical-align: 0.05em;
-  box-shadow: 0 0 0 3px rgba(200, 145, 45, 0.2);
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(200, 145, 45, 0.35);
 }
 
 .nav {
