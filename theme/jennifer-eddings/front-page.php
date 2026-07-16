@@ -14,6 +14,7 @@ $instagram = je_mod( 'je_instagram_url', 'https://www.instagram.com/jen_the_rn_8
 $linkedin  = je_mod( 'je_linkedin_url', 'https://www.linkedin.com/in/chiefspiritofficer/' );
 $facebook  = je_mod( 'je_facebook_url', 'https://www.facebook.com/jennifer.eddings.33' );
 $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasuresMedia' );
+$podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' );
 ?>
 
 <section class="hero" id="top">
@@ -27,8 +28,10 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 			<?php esc_html_e( 'BSN, RN, NPD-BC. Host of The Call Light Collective. I create spaces where nurses and leaders feel seen, supported, and still able to laugh.', 'jennifer-eddings' ); ?>
 		</p>
 		<div class="hero-actions">
-			<a class="link-arrow link-solid" href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
-			<a class="link-arrow" href="#collective"><?php esc_html_e( 'The Collective', 'jennifer-eddings' ); ?></a>
+			<?php if ( $podcast ) : ?>
+				<a class="link-arrow link-solid" href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Listen to the podcast', 'jennifer-eddings' ); ?></a>
+			<?php endif; ?>
+			<a class="link-arrow" href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
 		</div>
 	</div>
 	<aside class="hero-media">
@@ -115,6 +118,9 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 				</h2>
 				<p class="lead"><?php esc_html_e( 'Healing-centered storytelling for nurses, leaders, and collaborators — with room to grow guests, press, and community.', 'jennifer-eddings' ); ?></p>
 				<div class="hero-actions">
+					<?php if ( $podcast ) : ?>
+						<a class="link-arrow link-solid" href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Listen to the podcast', 'jennifer-eddings' ); ?></a>
+					<?php endif; ?>
 					<?php if ( $youtube ) : ?>
 						<a class="link-arrow" href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Watch on YouTube', 'jennifer-eddings' ); ?></a>
 					<?php endif; ?>
@@ -141,6 +147,9 @@ $youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasures
 				<?php endif; ?>
 			</div>
 			<ul class="social-list">
+				<?php if ( $podcast ) : ?>
+					<li><a href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">Podcast <span>Buzzsprout</span></a></li>
+				<?php endif; ?>
 				<?php if ( $instagram ) : ?>
 					<li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span>@jen_the_rn_82</span></a></li>
 				<?php endif; ?>

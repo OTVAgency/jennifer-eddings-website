@@ -407,6 +407,17 @@ em {
   border-bottom-color: var(--gold);
 }
 
+.band-plum .link-arrow.link-solid {
+  background: var(--gold);
+  color: var(--plum-deep);
+  border: none;
+}
+
+.band-plum .link-arrow.link-solid:hover {
+  background: var(--gold-soft);
+  color: var(--plum-deep);
+}
+
 .band-plum .speak-banner figcaption {
   color: rgba(255, 250, 245, 0.55);
 }

@@ -79,6 +79,7 @@ function je_customize_register( $wp_customize ) {
 		'je_linkedin_url'   => array( 'label' => __( 'LinkedIn URL', 'jennifer-eddings' ), 'default' => 'https://www.linkedin.com/in/chiefspiritofficer/' ),
 		'je_facebook_url'   => array( 'label' => __( 'Facebook URL', 'jennifer-eddings' ), 'default' => 'https://www.facebook.com/jennifer.eddings.33' ),
 		'je_youtube_url'    => array( 'label' => __( 'YouTube URL', 'jennifer-eddings' ), 'default' => 'https://www.youtube.com/@ComfortMeasuresMedia' ),
+		'je_podcast_url'    => array( 'label' => __( 'Podcast URL', 'jennifer-eddings' ), 'default' => 'https://thecalllightco.buzzsprout.com' ),
 		'je_headline'       => array( 'label' => __( 'Hero headline', 'jennifer-eddings' ), 'default' => 'Nurse leader, storyteller, and host of The Call Light Collective.' ),
 		'je_support_line'   => array( 'label' => __( 'Hero support line', 'jennifer-eddings' ), 'default' => 'A grounded home for Jennifer Eddings — professionalism with authenticity, heart, and humor.' ),
 	);
