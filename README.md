@@ -1,35 +1,33 @@
 # Jennifer Eddings — Personal Brand Website
 
-WordPress theme for **SiteGround**, plus a static **GitHub Pages** preview for client review.
+**Production:** SiteGround WordPress + **Juliette** (OKThemes / Envato Elements) + Elementor  
+**Interim preview:** https://otvagency.github.io/jennifer-eddings-website/
+
+Full install + brand/copy map: **[SITEGROUND_JULIETTE.md](./SITEGROUND_JULIETTE.md)**
 
 ## Structure
 
 | Path | Purpose |
 |------|---------|
-| `theme/jennifer-eddings/` | Installable WordPress theme (zip & upload on SiteGround) |
-| `docs/` (GitHub Pages) / `preview/` | Static HTML mirror — client share link via GitHub Pages |
-| `_archive-openai-sites/` | Archived Next.js / OpenAI Sites first pass (not for production) |
+| `SITEGROUND_JULIETTE.md` | Production runbook (Juliette install, brand tokens, page map, paste-ready copy) |
+| `docs/` / `preview/` | Static interim preview (GitHub Pages) — share until SiteGround is live |
+| `theme/jennifer-eddings/` | Earlier custom theme — **reference only** (not production) |
+| `theme/jennifer-eddings.zip` | Local zip of custom theme (gitignore’d from new zips; reference) |
+| `_archive-openai-sites/` | Archived Next.js / OpenAI Sites first pass |
 
-## Client preview
+## Client preview (now)
 
-After Pages is enabled from the `/docs` folder on `main`:
+https://otvagency.github.io/jennifer-eddings-website/
 
-`https://otvagency.github.io/jennifer-eddings-website/`
+## SiteGround production (next)
 
-(Exact URL depends on the GitHub account that owns the repo.)
-
-## SiteGround install
-
-```bash
-cd theme && zip -r jennifer-eddings.zip jennifer-eddings -x "*.DS_Store"
-```
-
-1. WordPress admin → **Appearance → Themes → Upload** → activate **Jennifer Eddings**
-2. **Settings → Reading** → static front page
-3. **Customize → Jennifer Eddings Brand** → email, booking, media kit, socials
+1. Provision WordPress on SiteGround  
+2. Install Elementor (+ Pro) and Juliette from Envato Elements  
+3. Follow [SITEGROUND_JULIETTE.md](./SITEGROUND_JULIETTE.md) for global styles, page mapping, and copy  
+4. Fill gaps from `Documents/Jennifer_Eddings_Website_Content_Request.xlsx` (public email, headshot, booking, etc.)
 
 ## Content still needed from Jennifer
 
 See Drive: `Documents/Jennifer_Eddings_Website_Content_Request.xlsx`
 
-Public email is intentionally **not** set until she confirms a brand address.
+Do **not** publish `comfortmeasures24@gmail.com` as the public brand email unless she explicitly chooses it.
