@@ -19,7 +19,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 
 <section class="hero" id="top">
 	<div class="hero-copy">
-		<div class="sparkle-field" data-sparkles="26" aria-hidden="true"></div>
+		<div class="sparkle-field" data-sparkles="55" aria-hidden="true"></div>
 		<h1 class="hero-name">Jennifer<br>Eddings</h1>
 		<p class="hero-role">
 			Nurse leader <span class="ital">and</span> storyteller
@@ -37,7 +37,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 		</div>
 	</div>
 	<aside class="hero-media">
-		<div class="sparkle-field" data-sparkles="14" aria-hidden="true"></div>
+		<div class="sparkle-field" data-sparkles="36" aria-hidden="true"></div>
 		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings with The Call Light Collective', 'jennifer-eddings' ); ?>" width="1200" height="1600">
 	</aside>
 </section>
@@ -75,7 +75,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 </section>
 
 <section class="section band-plum" id="collaborate">
-	<div class="sparkle-field" data-sparkles="30" aria-hidden="true"></div>
+	<div class="sparkle-field" data-sparkles="60" aria-hidden="true"></div>
 	<div class="section-inner">
 		<div class="services-head reveal">
 			<div>

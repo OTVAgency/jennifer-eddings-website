@@ -31,22 +31,51 @@
   }
 
   function seedSparkles(field) {
-    var count = Number(field.getAttribute("data-sparkles") || 22);
+    var count = Number(field.getAttribute("data-sparkles") || 40);
     var frag = document.createDocumentFragment();
     for (var i = 0; i < count; i += 1) {
       var spark = document.createElement("span");
-      spark.className = "sparkle" + (i % 5 === 0 ? " is-star" : "");
+      var kind = i % 4 === 0 ? " is-star" : i % 5 === 0 ? " is-diamond" : "";
+      var drift = i % 3 === 0 ? " is-drift" : "";
+      spark.className = "sparkle" + kind + drift;
       spark.style.left = Math.random() * 100 + "%";
       spark.style.top = Math.random() * 100 + "%";
-      spark.style.setProperty("--twinkle-duration", 2.4 + Math.random() * 3.2 + "s");
-      spark.style.setProperty("--twinkle-delay", Math.random() * 4 + "s");
+      spark.style.setProperty("--twinkle-duration", 1.6 + Math.random() * 2.8 + "s");
+      spark.style.setProperty("--twinkle-delay", Math.random() * 3.5 + "s");
+      spark.style.setProperty("--fall-duration", 5 + Math.random() * 7 + "s");
+      spark.style.setProperty("--fall-delay", Math.random() * 6 + "s");
       frag.appendChild(spark);
     }
     field.appendChild(frag);
   }
 
+  function ensureFoil(el) {
+    if (!el || el.querySelector(".foil-sheen")) return;
+    var foil = document.createElement("div");
+    foil.className = "foil-sheen";
+    foil.setAttribute("aria-hidden", "true");
+    el.insertBefore(foil, el.firstChild);
+  }
+
+  function spawnCursorGlitter(x, y) {
+    var bit = document.createElement("span");
+    bit.className = "cursor-glitter" + (Math.random() > 0.65 ? " is-star" : "");
+    bit.style.left = x + "px";
+    bit.style.top = y + "px";
+    document.body.appendChild(bit);
+    window.setTimeout(function () {
+      bit.remove();
+    }, 700);
+  }
+
   if (!reduceMotion) {
     document.querySelectorAll(".sparkle-field").forEach(seedSparkles);
+
+    document.querySelectorAll(".hero-copy, .hero-media, .band-plum, .page-hero").forEach(ensureFoil);
+
+    document.querySelectorAll(".hero-media, .speak-banner, .video-frame, .about-mosaic figure").forEach(function (el) {
+      el.classList.add("glam-frame");
+    });
 
     document.querySelectorAll(".hero-copy, .hero-media").forEach(function (el) {
       el.classList.add("hero-entrance");
@@ -62,7 +91,7 @@
             }
           });
         },
-        { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+        { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
       );
 
       document.querySelectorAll(".reveal").forEach(function (el) {
@@ -84,13 +113,25 @@
           ticking = true;
           window.requestAnimationFrame(function () {
             var y = Math.min(window.scrollY, 420);
-            heroImg.style.transform = "translate3d(0, " + y * 0.12 + "px, 0) scale(1.04)";
+            heroImg.style.transform = "translate3d(0, " + y * 0.14 + "px, 0) scale(1.05)";
             ticking = false;
           });
         },
         { passive: true }
       );
     }
+
+    var lastSparkle = 0;
+    document.addEventListener(
+      "pointermove",
+      function (event) {
+        var now = Date.now();
+        if (now - lastSparkle < 45) return;
+        lastSparkle = now;
+        spawnCursorGlitter(event.clientX - 3, event.clientY - 3);
+      },
+      { passive: true }
+    );
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) {
       el.classList.add("is-in");
