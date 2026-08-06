@@ -66,11 +66,6 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 				</figure>
 			</div>
 		</div>
-		<div class="stat-row reveal">
-			<span>BSN, RN, NPD-BC</span>
-			<span><?php esc_html_e( 'Daisy Award', 'jennifer-eddings' ); ?></span>
-			<span>ICU · NPD · Leadership</span>
-		</div>
 	</div>
 </section>
 
