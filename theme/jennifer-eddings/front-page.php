@@ -1,6 +1,6 @@
 <?php
 /**
- * Front page — Juliette-inspired personal brand layout.
+ * Front page — personal brand layout for Jennifer Eddings.
  *
  * @package Jennifer_Eddings
  */
@@ -27,18 +27,16 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 		<hr class="glitz-rule" aria-hidden="true">
 		<p class="hero-intro">
 			<strong><?php esc_html_e( 'Hello — I’m Jennifer.', 'jennifer-eddings' ); ?></strong>
-			<?php esc_html_e( 'BSN, RN, NPD-BC. Host of The Call Light Collective. I create spaces where nurses and leaders feel seen, supported, and still able to laugh.', 'jennifer-eddings' ); ?>
+			<?php esc_html_e( 'BSN, RN, NPD-BC. I create spaces where nurses and leaders feel seen, supported, and still able to laugh.', 'jennifer-eddings' ); ?>
 		</p>
 		<div class="hero-actions">
-			<?php if ( $podcast ) : ?>
-				<a class="link-arrow link-solid" href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Listen to the podcast', 'jennifer-eddings' ); ?></a>
-			<?php endif; ?>
+			<a class="link-arrow link-solid" href="#collaborate"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></a>
 			<a class="link-arrow" href="#connect"><?php esc_html_e( 'Connect', 'jennifer-eddings' ); ?></a>
 		</div>
 	</div>
 	<aside class="hero-media">
 		<div class="sparkle-field" data-sparkles="36" aria-hidden="true"></div>
-		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings with The Call Light Collective', 'jennifer-eddings' ); ?>" width="1200" height="1600">
+		<img src="<?php echo esc_url( $theme_uri . '/assets/images/jen-hero.jpg' ); ?>" alt="<?php esc_attr_e( 'Jennifer Eddings', 'jennifer-eddings' ); ?>" width="1200" height="1600">
 	</aside>
 </section>
 
@@ -51,8 +49,8 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 		<div class="about-grid">
 			<div class="about-body reveal reveal-left">
 				<p><?php esc_html_e( 'I’m Jennifer, a Daisy Award–winning nurse leader whose work spans Critical Care, ICU leadership, and nursing professional development. I help people stay human in the work — with professionalism, authenticity, and unfiltered honesty.', 'jennifer-eddings' ); ?></p>
-				<p><?php esc_html_e( 'As founder and host of The Call Light Collective, I champion healthcare storytelling and culture. Whether on a stage, a podcast, or a panel, the goal is the same: spaces where people feel seen and supported.', 'jennifer-eddings' ); ?></p>
-				<p class="lead" style="margin-top: 1.75rem;"><?php esc_html_e( 'I work with collaborators, sponsors, and audiences who care about nursing culture, healing-centered stories, and voices that tell the truth with heart.', 'jennifer-eddings' ); ?></p>
+				<p><?php esc_html_e( 'Whether on a stage, a podcast, or a panel, the goal is the same: spaces where people feel seen and supported. I champion healthcare storytelling and culture that tells the truth with heart.', 'jennifer-eddings' ); ?></p>
+				<p class="lead" style="margin-top: 1.75rem;"><?php esc_html_e( 'I work with collaborators, sponsors, and audiences who care about nursing culture, healing-centered stories, and voices that refuse to shrink.', 'jennifer-eddings' ); ?></p>
 			</div>
 			<div class="about-mosaic reveal reveal-scale">
 				<figure class="mosaic-main">
@@ -74,7 +72,6 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 	<div class="section-inner">
 		<div class="services-head reveal">
 			<div>
-				<img class="clc-mark" src="<?php echo esc_url( $theme_uri . '/assets/images/clc-monogram.png' ); ?>" alt="" width="80" height="80">
 				<p class="eyebrow"><?php esc_html_e( 'Explore', 'jennifer-eddings' ); ?></p>
 				<h2 class="display-sans"><?php esc_html_e( 'Collaborate', 'jennifer-eddings' ); ?></h2>
 			</div>
@@ -84,7 +81,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 			<article class="service-card reveal">
 				<p class="service-kicker"><?php esc_html_e( 'podcast', 'jennifer-eddings' ); ?></p>
 				<h3><?php esc_html_e( 'Host & features', 'jennifer-eddings' ); ?></h3>
-				<p><?php esc_html_e( 'Guest features, sponsorships, and story-led episodes through The Call Light Collective.', 'jennifer-eddings' ); ?></p>
+				<p><?php esc_html_e( 'Guest features, sponsorships, and story-led episodes through her podcast, The Call Light Collective.', 'jennifer-eddings' ); ?></p>
 			</article>
 			<article class="service-card reveal">
 				<p class="service-kicker"><?php esc_html_e( 'stage', 'jennifer-eddings' ); ?></p>
@@ -103,7 +100,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 			<figcaption><?php esc_html_e( 'At the mic — stories told in the room.', 'jennifer-eddings' ); ?></figcaption>
 		</figure>
 
-		<div class="collective-block reveal" id="collective">
+		<div class="collective-block reveal" id="podcast">
 			<div class="video-frame">
 				<video controls playsinline preload="metadata" poster="<?php echo esc_url( $theme_uri . '/assets/images/jen-stage.jpg' ); ?>">
 					<source src="<?php echo esc_url( $theme_uri . '/assets/video/call-light-intro.mp4' ); ?>" type="video/mp4">
@@ -111,11 +108,11 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 				</video>
 			</div>
 			<div>
-				<p class="eyebrow"><?php esc_html_e( 'The Call Light Collective', 'jennifer-eddings' ); ?></p>
-				<h2 class="display-serif" style="max-width: 12ch; font-size: clamp(2rem, 4vw, 3rem);">
+				<p class="eyebrow"><?php esc_html_e( 'Podcast', 'jennifer-eddings' ); ?></p>
+				<h2 class="display-serif" style="max-width: 14ch; font-size: clamp(2rem, 4vw, 3rem);">
 					<?php esc_html_e( 'Story-led conversations for anyone who answers the call', 'jennifer-eddings' ); ?>
 				</h2>
-				<p class="lead"><?php esc_html_e( 'Healing-centered storytelling for nurses, leaders, and collaborators — with room to grow guests, press, and community.', 'jennifer-eddings' ); ?></p>
+				<p class="lead"><?php esc_html_e( 'Jennifer hosts The Call Light Collective — healing-centered storytelling for nurses, leaders, and collaborators.', 'jennifer-eddings' ); ?></p>
 				<div class="hero-actions">
 					<?php if ( $podcast ) : ?>
 						<a class="link-arrow link-solid" href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Listen to the podcast', 'jennifer-eddings' ); ?></a>
@@ -148,7 +145,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 			</div>
 			<ul class="social-list reveal-stagger">
 				<?php if ( $podcast ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">Podcast <span>Buzzsprout</span></a></li>
+					<li class="reveal"><a href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">Podcast <span><?php esc_html_e( 'Listen', 'jennifer-eddings' ); ?></span></a></li>
 				<?php endif; ?>
 				<?php if ( $instagram ) : ?>
 					<li class="reveal"><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span>@jen_the_rn_82</span></a></li>
@@ -160,7 +157,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 					<li class="reveal"><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener noreferrer">Facebook <span>Jennifer Eddings</span></a></li>
 				<?php endif; ?>
 				<?php if ( $youtube ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer">YouTube <span>CMC Media</span></a></li>
+					<li class="reveal"><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer">YouTube <span><?php esc_html_e( 'Watch', 'jennifer-eddings' ); ?></span></a></li>
 				<?php endif; ?>
 			</ul>
 		</div>

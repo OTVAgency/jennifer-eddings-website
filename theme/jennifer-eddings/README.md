@@ -1,6 +1,6 @@
 # Jennifer Eddings — WordPress theme (SiteGround)
 
-Custom theme for Jennifer Eddings’ personal brand site and The Call Light Collective.
+Custom theme for Jennifer Eddings’ personal brand site.
 
 ## Site shape
 

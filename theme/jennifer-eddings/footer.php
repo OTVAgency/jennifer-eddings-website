@@ -7,7 +7,7 @@
 ?>
 <footer class="site-footer">
 	<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Jennifer Eddings</p>
-	<p>The Call Light Collective</p>
+	<p>Nurse leader &amp; storyteller</p>
 </footer>
 <?php wp_footer(); ?>
 </body>

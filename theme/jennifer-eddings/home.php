@@ -21,7 +21,7 @@ $items     = je_blog_feed_items();
 		<p class="eyebrow reveal"><?php esc_html_e( 'Podcast · Stage · Social', 'jennifer-eddings' ); ?></p>
 		<h1 class="display-sans reveal"><?php esc_html_e( 'Blog', 'jennifer-eddings' ); ?></h1>
 		<hr class="glitz-rule reveal" aria-hidden="true">
-		<p class="lead reveal"><?php esc_html_e( 'Episodes, videos, and moments from Jennifer Eddings and The Call Light Collective — a living feed that updates as new stories go live.', 'jennifer-eddings' ); ?></p>
+		<p class="lead reveal"><?php esc_html_e( 'Episodes, videos, and moments from Jennifer Eddings — a living feed that updates as new stories go live.', 'jennifer-eddings' ); ?></p>
 		<p class="feed-status reveal"><?php esc_html_e( 'Updated from podcast RSS, YouTube, and site posts.', 'jennifer-eddings' ); ?></p>
 	</div>
 </section>

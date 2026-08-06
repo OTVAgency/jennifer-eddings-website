@@ -16,7 +16,7 @@
 <?php wp_body_open(); ?>
 <header class="site-header">
 	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<img class="logo-mark" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/clc-mark.png' ); ?>" alt="<?php esc_attr_e( 'Call Light Collective', 'jennifer-eddings' ); ?>" width="56" height="56">
+		<span class="logo-dot" aria-hidden="true"></span>
 		<span>Jennifer Eddings</span>
 	</a>
 	<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="<?php esc_attr_e( 'Open menu', 'jennifer-eddings' ); ?>">

@@ -131,6 +131,15 @@ em {
   text-transform: uppercase;
 }
 
+.logo-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--rose));
+  box-shadow: 0 0 12px rgba(240, 196, 90, 0.65);
+  flex-shrink: 0;
+}
+
 .logo-mark {
   width: 3.5rem;
   height: 3.5rem;

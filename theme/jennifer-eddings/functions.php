@@ -85,8 +85,8 @@ function je_customize_register( $wp_customize ) {
 		'je_podcast_url'    => array( 'label' => __( 'Podcast URL', 'jennifer-eddings' ), 'default' => 'https://thecalllightco.buzzsprout.com' ),
 		'je_podcast_rss'    => array( 'label' => __( 'Podcast RSS URL', 'jennifer-eddings' ), 'default' => 'https://feeds.buzzsprout.com/2539726.rss' ),
 		'je_youtube_rss'    => array( 'label' => __( 'YouTube RSS URL', 'jennifer-eddings' ), 'default' => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCZ110niJgCXxHuk2AEcCnNg' ),
-		'je_headline'       => array( 'label' => __( 'Hero headline', 'jennifer-eddings' ), 'default' => 'Nurse leader, storyteller, and host of The Call Light Collective.' ),
-		'je_support_line'   => array( 'label' => __( 'Hero support line', 'jennifer-eddings' ), 'default' => 'A grounded home for Jennifer Eddings — professionalism with authenticity, heart, and humor.' ),
+		'je_headline'       => array( 'label' => __( 'Hero headline', 'jennifer-eddings' ), 'default' => 'Nurse leader, storyteller, and speaker.' ),
+		'je_support_line'   => array( 'label' => __( 'Hero support line', 'jennifer-eddings' ), 'default' => 'A personal brand home for Jennifer Eddings — professionalism with authenticity, heart, and humor.' ),
 	);
 
 	foreach ( $fields as $id => $args ) {
