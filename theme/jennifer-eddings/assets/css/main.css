@@ -871,9 +871,35 @@ em {
   border: none;
 }
 
-.appearances-cta .link-arrow.link-solid:hover {
-  background: var(--gold-soft);
-  color: var(--plum-deep);
+.feed-status {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--plum-soft);
+}
+
+.social-strip {
+  margin: 3rem 0 0;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--line-gold);
+  border-bottom: 1px solid var(--line-gold);
+}
+
+.social-strip-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.blog-loading {
+  grid-column: 1 / -1;
+  padding: 2rem 0;
+  color: var(--muted);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
 }
 
 @media (max-width: 900px) {

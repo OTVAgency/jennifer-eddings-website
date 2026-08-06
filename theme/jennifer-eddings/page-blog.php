@@ -1,6 +1,7 @@
 <?php
 /**
- * Legacy Appearances template — redirects conceptually to Blog layout.
+ * Template Name: Blog
+ * Description: Blog-style feed for Jennifer Eddings (RSS + posts).
  *
  * @package Jennifer_Eddings
  */

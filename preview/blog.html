@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Jennifer Eddings</title>
+  <meta name="description" content="Podcast episodes, videos, speaking, and stories from Jennifer Eddings and The Call Light Collective — updated from her feeds.">
+  <meta property="og:title" content="Blog | Jennifer Eddings">
+  <meta property="og:description" content="Podcast episodes, videos, speaking, and stories from Jennifer Eddings and The Call Light Collective.">
+  <meta property="og:image" content="images/jen-hero.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page-blog">
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img class="logo-mark" src="images/clc-mark.png" alt="Call Light Collective" width="56" height="56">
+      <span>Jennifer Eddings</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </span>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="index.html#connect">Connect</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="sparkle-field" data-sparkles="40" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow reveal">Podcast · Stage · Social</p>
+      <h1 class="display-sans reveal">Blog</h1>
+      <hr class="glitz-rule reveal" aria-hidden="true">
+      <p class="lead reveal">Episodes, videos, and moments from Jennifer Eddings and The Call Light Collective — a living feed that updates as new stories go live.</p>
+      <p class="feed-status reveal" id="feed-status" aria-live="polite">Loading latest updates…</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="appearance-filters reveal" role="group" aria-label="Filter blog">
+        <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-chip" data-filter="podcast" aria-pressed="false">Podcast</button>
+        <button type="button" class="filter-chip" data-filter="video" aria-pressed="false">Video</button>
+        <button type="button" class="filter-chip" data-filter="speaking" aria-pressed="false">Speaking</button>
+        <button type="button" class="filter-chip" data-filter="feature" aria-pressed="false">Feature</button>
+      </div>
+
+      <p class="appearance-empty" hidden>No posts in this category yet.</p>
+
+      <div
+        class="appearance-grid reveal-stagger"
+        id="blog-feed"
+        data-feed="data/feed.json"
+        data-podcast-rss="https://feeds.buzzsprout.com/2539726.rss"
+        data-youtube-rss="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ110niJgCXxHuk2AEcCnNg"
+        data-fallback-image="images/jen-speak.jpg"
+      ></div>
+
+      <aside class="social-strip reveal">
+        <p class="eyebrow">Follow along</p>
+        <div class="social-strip-links">
+          <a class="link-arrow" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">Podcast</a>
+          <a class="link-arrow" href="https://www.instagram.com/jen_the_rn_82" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="link-arrow" href="https://www.youtube.com/@ComfortMeasuresMedia" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a class="link-arrow" href="https://www.linkedin.com/in/chiefspiritofficer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </aside>
+
+      <div class="appearances-cta">
+        <p class="eyebrow">Want Jennifer on your stage or show?</p>
+        <h2 class="display-serif" style="max-width: 18ch; font-size: clamp(2rem, 4vw, 3rem);">Let’s build the next story together.</h2>
+        <div class="hero-actions" style="margin-top: 1.5rem;">
+          <a class="link-arrow link-solid" href="index.html#connect">Connect</a>
+          <a class="link-arrow" href="https://thecalllightco.buzzsprout.com" target="_blank" rel="noopener noreferrer">All episodes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 Jennifer Eddings</p>
+    <p>The Call Light Collective</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
