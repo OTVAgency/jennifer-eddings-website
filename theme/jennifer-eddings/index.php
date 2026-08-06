@@ -1,6 +1,6 @@
 <?php
 /**
- * Fallback index — uses appearances card layout.
+ * Fallback index — uses blog card layout.
  *
  * @package Jennifer_Eddings
  */
