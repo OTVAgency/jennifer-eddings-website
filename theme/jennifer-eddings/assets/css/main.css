@@ -1014,20 +1014,39 @@ em {
 
 .cursor-glitter {
   position: fixed;
-  width: 7px;
-  height: 7px;
+  top: 0;
+  left: 0;
+  width: var(--size, 10px);
+  height: var(--size, 10px);
+  margin: 0;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 80;
-  background: radial-gradient(circle, #fff 0%, var(--gold-bright) 45%, transparent 70%);
-  box-shadow: 0 0 12px rgba(255, 226, 154, 0.95);
-  animation: cursor-pop 0.7s ease-out forwards;
+  z-index: 9999;
+  background: radial-gradient(circle, #fff 0%, var(--gold-bright) 40%, var(--gold) 70%, transparent 75%);
+  box-shadow:
+    0 0 10px rgba(255, 226, 154, 1),
+    0 0 22px rgba(212, 160, 23, 0.85),
+    0 0 36px rgba(240, 196, 90, 0.45);
+  opacity: 0.95;
+  will-change: transform, opacity;
+  animation: cursor-trail var(--life, 900ms) ease-out forwards;
 }
 
 .cursor-glitter.is-star {
   border-radius: 0;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background: linear-gradient(135deg, #fff, var(--gold-bright), var(--gold));
+  background: linear-gradient(135deg, #fff, var(--gold-bright), var(--gold), var(--rose));
+  box-shadow:
+    0 0 12px rgba(255, 226, 154, 1),
+    0 0 24px rgba(212, 160, 23, 0.7);
+}
+
+.cursor-glitter.is-diamond {
+  border-radius: 1px;
+  background: linear-gradient(135deg, #fff, var(--gold-bright), var(--rose));
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.95),
+    0 0 20px rgba(196, 120, 138, 0.55);
 }
 
 .foil-sheen {
@@ -1299,9 +1318,21 @@ em {
   100% { translate: 12px 110%; }
 }
 
-@keyframes cursor-pop {
-  0% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.2) translateY(12px); }
+@keyframes cursor-trail {
+  0% {
+    opacity: 1;
+    transform: translate3d(var(--x), var(--y), 0) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(
+        calc(var(--x) + var(--dx, 0px)),
+        calc(var(--y) + var(--dy, 14px)),
+        0
+      )
+      scale(0.15)
+      rotate(40deg);
+  }
 }
 
 @keyframes foil-slide {

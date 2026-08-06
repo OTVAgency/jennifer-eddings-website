@@ -57,15 +57,23 @@
     el.insertBefore(foil, el.firstChild);
   }
 
-  function spawnCursorGlitter(x, y) {
+  function spawnCursorGlitter(x, y, dx, dy) {
     var bit = document.createElement("span");
-    bit.className = "cursor-glitter" + (Math.random() > 0.65 ? " is-star" : "");
-    bit.style.left = x + "px";
-    bit.style.top = y + "px";
+    var roll = Math.random();
+    var kind = roll > 0.72 ? " is-star" : roll > 0.5 ? " is-diamond" : "";
+    var size = 6 + Math.random() * 10;
+    var life = 700 + Math.random() * 500;
+    bit.className = "cursor-glitter" + kind;
+    bit.style.setProperty("--x", x - size / 2 + "px");
+    bit.style.setProperty("--y", y - size / 2 + "px");
+    bit.style.setProperty("--dx", (dx || 0) + (Math.random() * 18 - 9) + "px");
+    bit.style.setProperty("--dy", (dy || 14) + Math.random() * 18 + "px");
+    bit.style.setProperty("--size", size + "px");
+    bit.style.setProperty("--life", life + "ms");
     document.body.appendChild(bit);
     window.setTimeout(function () {
       bit.remove();
-    }, 700);
+    }, life + 40);
   }
 
   if (!reduceMotion) {
@@ -121,14 +129,41 @@
       );
     }
 
+    var lastX = null;
+    var lastY = null;
     var lastSparkle = 0;
     document.addEventListener(
       "pointermove",
       function (event) {
+        if (event.pointerType === "touch") return;
         var now = Date.now();
-        if (now - lastSparkle < 45) return;
+        var x = event.clientX;
+        var y = event.clientY;
+        if (lastX === null) {
+          lastX = x;
+          lastY = y;
+        }
+        var dist = Math.hypot(x - lastX, y - lastY);
+        if (dist < 6 && now - lastSparkle < 20) return;
+        if (now - lastSparkle < 16) return;
         lastSparkle = now;
-        spawnCursorGlitter(event.clientX - 3, event.clientY - 3);
+
+        var moveX = x - lastX;
+        var moveY = y - lastY;
+        lastX = x;
+        lastY = y;
+
+        var trailX = -moveX * 0.35;
+        var trailY = -moveY * 0.35 + 8;
+        var burst = dist > 28 ? 3 : 2;
+        for (var i = 0; i < burst; i += 1) {
+          spawnCursorGlitter(
+            x - moveX * (i * 0.18) + (Math.random() * 10 - 5),
+            y - moveY * (i * 0.18) + (Math.random() * 10 - 5),
+            trailX,
+            trailY
+          );
+        }
       },
       { passive: true }
     );
