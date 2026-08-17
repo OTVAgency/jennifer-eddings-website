@@ -1,14 +1,27 @@
 {
-  "updated": "2026-08-17T00:35:10Z",
+  "updated": "2026-08-17T00:44:25Z",
   "sources": {
     "podcastRss": "https://feeds.buzzsprout.com/2539726.rss",
     "podcastUrl": "https://thecalllightco.buzzsprout.com",
-    "youtubeUrl": "",
-    "youtubeRss": "",
+    "youtubeUrl": "https://www.youtube.com/playlist?list=PL-4T6LUTX9bmv0SdZEaJEWEPFSuGzuqQJ",
+    "youtubeRss": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL-4T6LUTX9bmv0SdZEaJEWEPFSuGzuqQJ",
+    "youtubeShortsRss": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL-4T6LUTX9bkXpBY-e8Hq4v3UJICjuvGu",
     "instagramUrl": "https://www.instagram.com/jen_the_rn_82",
     "tiktokUrl": "https://www.tiktok.com/@jen_the_rn_82"
   },
   "items": [
+    {
+      "id": "yt:video:ePxOwXe7fO0",
+      "category": "video",
+      "title": "Healthcare Workers Are Lamps  Burnout \u2014 Explained! Our Light Is Dimming! #community #podcast",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/ePxOwXe7fO0",
+      "date": "2026-07-14",
+      "dateLabel": "Jul 14, 2026",
+      "image": "https://i2.ytimg.com/vi/ePxOwXe7fO0/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
     {
       "id": "Buzzsprout-18640525",
       "category": "podcast",
@@ -20,6 +33,90 @@
       "image": "https://storage.buzzsprout.com/4qkxk1sraj2vrr28hj1n0q6wkg8r?.jpg",
       "cta": "Listen",
       "source": "buzzsprout"
+    },
+    {
+      "id": "yt:video:SIecvmTdKA8",
+      "category": "video",
+      "title": "Round Table \u2014 Part 2 | Season Finale | The Call Light Collective",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=SIecvmTdKA8",
+      "date": "2026-02-09",
+      "dateLabel": "Feb 9, 2026",
+      "image": "https://i4.ytimg.com/vi/SIecvmTdKA8/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:8TWMPGypGEk",
+      "category": "video",
+      "title": "From Silence To Strength: Mothers, Work, And Healing",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=8TWMPGypGEk",
+      "date": "2026-02-09",
+      "dateLabel": "Feb 9, 2026",
+      "image": "https://i1.ytimg.com/vi/8TWMPGypGEk/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:Zg4tJWjw_DI",
+      "category": "video",
+      "title": "Overcoming Guilt: Finding Peace After Difficult Decisions #fyp #shorts",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/Zg4tJWjw_DI",
+      "date": "2026-02-03",
+      "dateLabel": "Feb 3, 2026",
+      "image": "https://i3.ytimg.com/vi/Zg4tJWjw_DI/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:d5tQn858Yaw",
+      "category": "video",
+      "title": "Nurses Shine: A Non-Traditional Journey to Healing #fyp #shorts",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/d5tQn858Yaw",
+      "date": "2026-02-01",
+      "dateLabel": "Feb 1, 2026",
+      "image": "https://i1.ytimg.com/vi/d5tQn858Yaw/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:Gr9xTzZJbDQ",
+      "category": "video",
+      "title": "Unexpected Friendship: Finding Inspiration in a Stranger #fyp #shorts",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/Gr9xTzZJbDQ",
+      "date": "2026-01-31",
+      "dateLabel": "Jan 31, 2026",
+      "image": "https://i4.ytimg.com/vi/Gr9xTzZJbDQ/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:axVNnshgjqw",
+      "category": "video",
+      "title": "Nurse Burnout: A Gentle Tip for Self-Care #fyp #shorts",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/axVNnshgjqw",
+      "date": "2026-01-30",
+      "dateLabel": "Jan 30, 2026",
+      "image": "https://i2.ytimg.com/vi/axVNnshgjqw/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:rmyF5zgvsiU",
+      "category": "video",
+      "title": "Nurse's Instinct: CPR in Life's Worst Moment #fyp #shorts",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/rmyF5zgvsiU",
+      "date": "2026-01-29",
+      "dateLabel": "Jan 29, 2026",
+      "image": "https://i3.ytimg.com/vi/rmyF5zgvsiU/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
     },
     {
       "id": "Buzzsprout-18569618",
@@ -34,6 +131,42 @@
       "source": "buzzsprout"
     },
     {
+      "id": "yt:video:1_nuMbzuAcQ",
+      "category": "video",
+      "title": "Answering the Call: Find Your Worth, Voice, and Boundaries  | Part 1 Finale",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=1_nuMbzuAcQ",
+      "date": "2026-01-26",
+      "dateLabel": "Jan 26, 2026",
+      "image": "https://i2.ytimg.com/vi/1_nuMbzuAcQ/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:SG0R7XYabm0",
+      "category": "video",
+      "title": "Answering the Call: Find Your Worth, Voice, and Boundaries | Part 1 Finale (Audio Only)",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=SG0R7XYabm0",
+      "date": "2026-01-26",
+      "dateLabel": "Jan 26, 2026",
+      "image": "https://i4.ytimg.com/vi/SG0R7XYabm0/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:15_ecmqfmoA",
+      "category": "video",
+      "title": "Podcast Confessions: Jeans, Sweatpants &amp; Ravishing Looks #fyp #shorts #confession",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/15_ecmqfmoA",
+      "date": "2026-01-13",
+      "dateLabel": "Jan 13, 2026",
+      "image": "https://i2.ytimg.com/vi/15_ecmqfmoA/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
       "id": "Buzzsprout-18489848",
       "category": "podcast",
       "title": "Carrying Love Through Grief: A CVICU Nurse's Guide to Healing with Janna Holterman",
@@ -44,6 +177,78 @@
       "image": "https://storage.buzzsprout.com/4qkxk1sraj2vrr28hj1n0q6wkg8r?.jpg",
       "cta": "Listen",
       "source": "buzzsprout"
+    },
+    {
+      "id": "yt:video:o0RpwlnPK54",
+      "category": "video",
+      "title": "Carrying Love Through Grief: A CVICU Nurse's Guide to Healing with Janna Holterman",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=o0RpwlnPK54",
+      "date": "2026-01-12",
+      "dateLabel": "Jan 12, 2026",
+      "image": "https://i4.ytimg.com/vi/o0RpwlnPK54/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:nZxoiZjOBbU",
+      "category": "video",
+      "title": "Carrying Love Through Grief: A CVICU Nurse's Guide to Healing with Janna Holterman",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=nZxoiZjOBbU",
+      "date": "2026-01-12",
+      "dateLabel": "Jan 12, 2026",
+      "image": "https://i3.ytimg.com/vi/nZxoiZjOBbU/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:WoaRGpntQtk",
+      "category": "video",
+      "title": "Carrying Love Through Grief: A CVICU Nurse's Guide to Healing with Janna Holterman",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=WoaRGpntQtk",
+      "date": "2026-01-12",
+      "dateLabel": "Jan 12, 2026",
+      "image": "https://i4.ytimg.com/vi/WoaRGpntQtk/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:h8WxN-N0xq0",
+      "category": "video",
+      "title": "Teaching to Care: My Brave Leap for Family #lessons #fyp #podcast",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/h8WxN-N0xq0",
+      "date": "2026-01-12",
+      "dateLabel": "Jan 12, 2026",
+      "image": "https://i1.ytimg.com/vi/h8WxN-N0xq0/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:575TYJinVgA",
+      "category": "video",
+      "title": "Full Time Caregiver: My Life as a Beautician &amp; More #fyp #caring #journey",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/575TYJinVgA",
+      "date": "2026-01-11",
+      "dateLabel": "Jan 11, 2026",
+      "image": "https://i2.ytimg.com/vi/575TYJinVgA/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:Ovm0vSUVGCU",
+      "category": "video",
+      "title": "Navigating the Difficult Shift  Parenting Your Parents #aging #roles #learning",
+      "excerpt": "",
+      "url": "https://www.youtube.com/shorts/Ovm0vSUVGCU",
+      "date": "2026-01-10",
+      "dateLabel": "Jan 10, 2026",
+      "image": "https://i4.ytimg.com/vi/Ovm0vSUVGCU/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
     },
     {
       "id": "Buzzsprout-18424105",
@@ -58,6 +263,30 @@
       "source": "buzzsprout"
     },
     {
+      "id": "yt:video:WhtvYLEYp-U",
+      "category": "video",
+      "title": "From Classroom To Caregiver: Choosing Family Over Certainty",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=WhtvYLEYp-U",
+      "date": "2025-12-29",
+      "dateLabel": "Dec 29, 2025",
+      "image": "https://i4.ytimg.com/vi/WhtvYLEYp-U/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
+      "id": "yt:video:JDsf5K-us9Q",
+      "category": "video",
+      "title": "From Classroom To Caregiver: Choosing Family Over Certainty",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=JDsf5K-us9Q",
+      "date": "2025-12-29",
+      "dateLabel": "Dec 29, 2025",
+      "image": "https://i3.ytimg.com/vi/JDsf5K-us9Q/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
+    },
+    {
       "id": "Buzzsprout-18353148",
       "category": "podcast",
       "title": "Keeping The Healers Whole",
@@ -68,6 +297,18 @@
       "image": "https://storage.buzzsprout.com/4qkxk1sraj2vrr28hj1n0q6wkg8r?.jpg",
       "cta": "Listen",
       "source": "buzzsprout"
+    },
+    {
+      "id": "yt:video:awuOGnWTXx0",
+      "category": "video",
+      "title": "Keeping The Healers Whole",
+      "excerpt": "",
+      "url": "https://www.youtube.com/watch?v=awuOGnWTXx0",
+      "date": "2025-12-15",
+      "dateLabel": "Dec 15, 2025",
+      "image": "https://i2.ytimg.com/vi/awuOGnWTXx0/hqdefault.jpg",
+      "cta": "Watch",
+      "source": "youtube"
     },
     {
       "id": "Buzzsprout-18274972",

@@ -14,7 +14,7 @@ $instagram = je_mod( 'je_instagram_url', 'https://www.instagram.com/jen_the_rn_8
 $tiktok    = je_mod( 'je_tiktok_url', 'https://www.tiktok.com/@jen_the_rn_82' );
 $linkedin  = je_mod( 'je_linkedin_url', 'https://www.linkedin.com/in/chiefspiritofficer/' );
 $facebook  = je_mod( 'je_facebook_url', 'https://www.facebook.com/jennifer.eddings.33' );
-$youtube   = je_mod( 'je_youtube_url', '' );
+$youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/playlist?list=PL-4T6LUTX9bmv0SdZEaJEWEPFSuGzuqQJ' );
 $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' );
 ?>
 
@@ -118,8 +118,8 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 					<?php if ( $podcast ) : ?>
 						<a class="link-arrow link-solid" href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Listen to the podcast', 'jennifer-eddings' ); ?></a>
 					<?php endif; ?>
-					<?php if ( $instagram ) : ?>
-						<a class="link-arrow" href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Follow on Instagram', 'jennifer-eddings' ); ?></a>
+					<?php if ( $youtube ) : ?>
+						<a class="link-arrow" href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Watch on YouTube', 'jennifer-eddings' ); ?></a>
 					<?php endif; ?>
 					<?php if ( $booking ) : ?>
 						<a class="link-arrow" href="<?php echo esc_url( $booking ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Book speaking', 'jennifer-eddings' ); ?></a>
@@ -148,6 +148,9 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 				<?php if ( $podcast ) : ?>
 					<li class="reveal"><a href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">Podcast <span><?php esc_html_e( 'Listen', 'jennifer-eddings' ); ?></span></a></li>
 				<?php endif; ?>
+				<?php if ( $youtube ) : ?>
+					<li class="reveal"><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer">YouTube <span><?php esc_html_e( 'Call Light Collective', 'jennifer-eddings' ); ?></span></a></li>
+				<?php endif; ?>
 				<?php if ( $instagram ) : ?>
 					<li class="reveal"><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span>@jen_the_rn_82</span></a></li>
 				<?php endif; ?>
@@ -159,9 +162,6 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 				<?php endif; ?>
 				<?php if ( $facebook ) : ?>
 					<li class="reveal"><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener noreferrer">Facebook <span>Jennifer Eddings</span></a></li>
-				<?php endif; ?>
-				<?php if ( $youtube ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer">YouTube <span><?php esc_html_e( 'Watch', 'jennifer-eddings' ); ?></span></a></li>
 				<?php endif; ?>
 			</ul>
 		</div>

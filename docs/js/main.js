@@ -244,7 +244,7 @@
         category: "video",
         title: title,
         excerpt: truncate(stripHtml(item.description || item.content || ""), 180),
-        url: item.link || "https://www.instagram.com/jen_the_rn_82",
+        url: item.link || "https://www.youtube.com/playlist?list=PL-4T6LUTX9bmv0SdZEaJEWEPFSuGzuqQJ",
         date: toIsoDate(item.pubDate),
         dateLabel: formatDateLabel(item.pubDate),
         image: item.thumbnail || fallbackImage,
@@ -403,6 +403,7 @@
     var feedUrl = grid.getAttribute("data-feed") || "data/feed.json";
     var podcastRss = grid.getAttribute("data-podcast-rss");
     var youtubeRss = grid.getAttribute("data-youtube-rss");
+    var youtubeShortsRss = grid.getAttribute("data-youtube-shorts-rss");
     var fallbackImage = grid.getAttribute("data-fallback-image") || "images/jen-speak.jpg";
 
     grid.innerHTML = '<p class="blog-loading">Loading stories…</p>';
@@ -426,40 +427,41 @@
           return item.category === "video";
         });
 
-        var livePromises = [];
-        if (podcastRss) {
-          livePromises.push(
-            fetchRssJson(podcastRss)
-              .then(function (data) {
-                return mapPodcastItems(data.items, data.feed && data.feed.image ? data.feed.image : fallbackImage);
-              })
-              .catch(function () {
-                return null;
-              })
-          );
-        } else {
-          livePromises.push(Promise.resolve(null));
+        function fetchYt(rss) {
+          if (!rss) return Promise.resolve(null);
+          return fetchRssJson(rss)
+            .then(function (data) {
+              return mapYoutubeItems(data.items, fallbackImage);
+            })
+            .catch(function () {
+              return null;
+            });
         }
 
-        if (youtubeRss) {
-          livePromises.push(
-            fetchRssJson(youtubeRss)
-              .then(function (data) {
-                return mapYoutubeItems(data.items, fallbackImage);
-              })
-              .catch(function () {
-                return null;
-              })
-          );
-        } else {
-          livePromises.push(Promise.resolve(null));
-        }
-
-        return Promise.all(livePromises).then(function (results) {
+        return Promise.all([
+          podcastRss
+            ? fetchRssJson(podcastRss)
+                .then(function (data) {
+                  return mapPodcastItems(
+                    data.items,
+                    data.feed && data.feed.image ? data.feed.image : fallbackImage
+                  );
+                })
+                .catch(function () {
+                  return null;
+                })
+            : Promise.resolve(null),
+          fetchYt(youtubeRss),
+          fetchYt(youtubeShortsRss),
+        ]).then(function (results) {
           var livePodcast = results[0];
           var liveVideo = results[1];
+          var liveShorts = results[2];
           var podcastItems = livePodcast && livePodcast.length ? livePodcast : cachedPodcast;
-          var videoItems = liveVideo && liveVideo.length ? liveVideo : cachedVideo;
+          var videoItems =
+            (liveVideo && liveVideo.length) || (liveShorts && liveShorts.length)
+              ? mergeItems([liveVideo || [], liveShorts || []])
+              : cachedVideo;
           var items = mergeItems([podcastItems, videoItems, manual]);
           renderBlogCards(grid, items, fallbackImage);
           bindFilters();
@@ -467,7 +469,9 @@
           if (status) {
             var liveBits = [];
             if (livePodcast && livePodcast.length) liveBits.push("podcast");
-            if (liveVideo && liveVideo.length) liveBits.push("YouTube");
+            if ((liveVideo && liveVideo.length) || (liveShorts && liveShorts.length)) {
+              liveBits.push("Call Light Collective on YouTube");
+            }
             if (liveBits.length) {
               status.textContent = "Updated live from " + liveBits.join(" + ") + ".";
             } else if (items.length) {

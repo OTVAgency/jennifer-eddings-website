@@ -14,7 +14,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PODCAST = "https://feeds.buzzsprout.com/2539726.rss"
-DEFAULT_YOUTUBE = ""
+DEFAULT_YOUTUBE = "https://www.youtube.com/feeds/videos.xml?playlist_id=PL-4T6LUTX9bmv0SdZEaJEWEPFSuGzuqQJ"
+DEFAULT_YOUTUBE_SHORTS = "https://www.youtube.com/feeds/videos.xml?playlist_id=PL-4T6LUTX9bkXpBY-e8Hq4v3UJICjuvGu"
+CLC_PLAYLIST_URL = "https://www.youtube.com/playlist?list=PL-4T6LUTX9bmv0SdZEaJEWEPFSuGzuqQJ"
 
 
 def strip_html(value: str) -> str:
@@ -95,7 +97,7 @@ def map_youtube(items: list, fallback: str) -> list:
                 "category": "video",
                 "title": title,
                 "excerpt": short(item.get("description") or ""),
-                "url": item.get("link") or "https://www.instagram.com/jen_the_rn_82",
+                "url": item.get("link") or CLC_PLAYLIST_URL,
                 "date": date_iso,
                 "dateLabel": date_label,
                 "image": item.get("thumbnail") or fallback,
@@ -110,19 +112,23 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--podcast-rss", default=DEFAULT_PODCAST)
     parser.add_argument("--youtube-rss", default=DEFAULT_YOUTUBE)
+    parser.add_argument("--youtube-shorts-rss", default=DEFAULT_YOUTUBE_SHORTS)
     args = parser.parse_args()
 
     podcast = rss2json(args.podcast_rss)
     items = map_podcast(podcast.get("items") or [], (podcast.get("feed") or {}).get("image") or "")
 
     youtube_rss = ""
-    if args.youtube_rss:
+    for label, rss in (("episodes", args.youtube_rss), ("shorts", args.youtube_shorts_rss)):
+        if not rss:
+            continue
         try:
-            youtube = rss2json(args.youtube_rss)
+            youtube = rss2json(rss)
             items.extend(map_youtube(youtube.get("items") or [], "images/jen-stage.jpg"))
-            youtube_rss = args.youtube_rss
+            if label == "episodes":
+                youtube_rss = rss
         except Exception as exc:
-            print(f"YouTube feed skipped: {exc}")
+            print(f"YouTube {label} feed skipped: {exc}")
 
     items.append(
         {
@@ -145,8 +151,9 @@ def main() -> None:
         "sources": {
             "podcastRss": args.podcast_rss,
             "podcastUrl": "https://thecalllightco.buzzsprout.com",
-            "youtubeUrl": "",
+            "youtubeUrl": CLC_PLAYLIST_URL,
             "youtubeRss": youtube_rss,
+            "youtubeShortsRss": args.youtube_shorts_rss or "",
             "instagramUrl": "https://www.instagram.com/jen_the_rn_82",
             "tiktokUrl": "https://www.tiktok.com/@jen_the_rn_82",
         },
