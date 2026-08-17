@@ -79,12 +79,13 @@ function je_customize_register( $wp_customize ) {
 		'je_booking_url'    => array( 'label' => __( 'Booking / speaking URL', 'jennifer-eddings' ), 'default' => '' ),
 		'je_media_kit_url'  => array( 'label' => __( 'Media kit URL', 'jennifer-eddings' ), 'default' => '' ),
 		'je_instagram_url'  => array( 'label' => __( 'Instagram URL', 'jennifer-eddings' ), 'default' => 'https://www.instagram.com/jen_the_rn_82' ),
+		'je_tiktok_url'     => array( 'label' => __( 'TikTok URL', 'jennifer-eddings' ), 'default' => 'https://www.tiktok.com/@jen_the_rn_82' ),
 		'je_linkedin_url'   => array( 'label' => __( 'LinkedIn URL', 'jennifer-eddings' ), 'default' => 'https://www.linkedin.com/in/chiefspiritofficer/' ),
 		'je_facebook_url'   => array( 'label' => __( 'Facebook URL', 'jennifer-eddings' ), 'default' => 'https://www.facebook.com/jennifer.eddings.33' ),
-		'je_youtube_url'    => array( 'label' => __( 'YouTube URL', 'jennifer-eddings' ), 'default' => 'https://www.youtube.com/@ComfortMeasuresMedia' ),
+		'je_youtube_url'    => array( 'label' => __( 'YouTube URL (optional)', 'jennifer-eddings' ), 'default' => '' ),
 		'je_podcast_url'    => array( 'label' => __( 'Podcast URL', 'jennifer-eddings' ), 'default' => 'https://thecalllightco.buzzsprout.com' ),
 		'je_podcast_rss'    => array( 'label' => __( 'Podcast RSS URL', 'jennifer-eddings' ), 'default' => 'https://feeds.buzzsprout.com/2539726.rss' ),
-		'je_youtube_rss'    => array( 'label' => __( 'YouTube RSS URL', 'jennifer-eddings' ), 'default' => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCZ110niJgCXxHuk2AEcCnNg' ),
+		'je_youtube_rss'    => array( 'label' => __( 'YouTube RSS URL (optional)', 'jennifer-eddings' ), 'default' => '' ),
 		'je_headline'       => array( 'label' => __( 'Hero headline', 'jennifer-eddings' ), 'default' => 'Nurse leader, storyteller, and speaker.' ),
 		'je_support_line'   => array( 'label' => __( 'Hero support line', 'jennifer-eddings' ), 'default' => 'A personal brand home for Jennifer Eddings — professionalism with authenticity, heart, and humor.' ),
 	);
@@ -212,12 +213,12 @@ function je_blog_feed_items() {
 	$theme_uri   = get_template_directory_uri();
 	$fallback    = $theme_uri . '/assets/images/jen-speak.jpg';
 	$podcast_rss = je_mod( 'je_podcast_rss', 'https://feeds.buzzsprout.com/2539726.rss' );
-	$youtube_rss = je_mod( 'je_youtube_rss', 'https://www.youtube.com/feeds/videos.xml?channel_id=UCZ110niJgCXxHuk2AEcCnNg' );
+	$youtube_rss = je_mod( 'je_youtube_rss', '' );
 
-	$items = array_merge(
-		je_fetch_rss_items( $podcast_rss, 'podcast', 12 ),
-		je_fetch_rss_items( $youtube_rss, 'video', 8 )
-	);
+	$items = je_fetch_rss_items( $podcast_rss, 'podcast', 12 );
+	if ( $youtube_rss ) {
+		$items = array_merge( $items, je_fetch_rss_items( $youtube_rss, 'video', 8 ) );
+	}
 
 	$query = new WP_Query(
 		array(

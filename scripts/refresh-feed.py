@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PODCAST = "https://feeds.buzzsprout.com/2539726.rss"
-DEFAULT_YOUTUBE = "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ110niJgCXxHuk2AEcCnNg"
+DEFAULT_YOUTUBE = ""
 
 
 def strip_html(value: str) -> str:
@@ -95,7 +95,7 @@ def map_youtube(items: list, fallback: str) -> list:
                 "category": "video",
                 "title": title,
                 "excerpt": short(item.get("description") or ""),
-                "url": item.get("link") or "https://www.youtube.com/@ComfortMeasuresMedia",
+                "url": item.get("link") or "https://www.instagram.com/jen_the_rn_82",
                 "date": date_iso,
                 "dateLabel": date_label,
                 "image": item.get("thumbnail") or fallback,
@@ -116,12 +116,13 @@ def main() -> None:
     items = map_podcast(podcast.get("items") or [], (podcast.get("feed") or {}).get("image") or "")
 
     youtube_rss = ""
-    try:
-        youtube = rss2json(args.youtube_rss)
-        items.extend(map_youtube(youtube.get("items") or [], "images/jen-stage.jpg"))
-        youtube_rss = args.youtube_rss
-    except Exception as exc:
-        print(f"YouTube feed skipped: {exc}")
+    if args.youtube_rss:
+        try:
+            youtube = rss2json(args.youtube_rss)
+            items.extend(map_youtube(youtube.get("items") or [], "images/jen-stage.jpg"))
+            youtube_rss = args.youtube_rss
+        except Exception as exc:
+            print(f"YouTube feed skipped: {exc}")
 
     items.append(
         {
@@ -144,9 +145,10 @@ def main() -> None:
         "sources": {
             "podcastRss": args.podcast_rss,
             "podcastUrl": "https://thecalllightco.buzzsprout.com",
-            "youtubeUrl": "https://www.youtube.com/@ComfortMeasuresMedia",
+            "youtubeUrl": "",
             "youtubeRss": youtube_rss,
             "instagramUrl": "https://www.instagram.com/jen_the_rn_82",
+            "tiktokUrl": "https://www.tiktok.com/@jen_the_rn_82",
         },
         "items": items,
     }

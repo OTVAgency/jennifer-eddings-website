@@ -244,7 +244,7 @@
         category: "video",
         title: title,
         excerpt: truncate(stripHtml(item.description || item.content || ""), 180),
-        url: item.link || "https://www.youtube.com/@ComfortMeasuresMedia",
+        url: item.link || "https://www.instagram.com/jen_the_rn_82",
         date: toIsoDate(item.pubDate),
         dateLabel: formatDateLabel(item.pubDate),
         image: item.thumbnail || fallbackImage,

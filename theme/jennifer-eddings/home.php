@@ -10,8 +10,9 @@ get_header();
 $theme_uri = get_template_directory_uri();
 $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' );
 $instagram = je_mod( 'je_instagram_url', 'https://www.instagram.com/jen_the_rn_82' );
-$youtube   = je_mod( 'je_youtube_url', 'https://www.youtube.com/@ComfortMeasuresMedia' );
+$tiktok    = je_mod( 'je_tiktok_url', 'https://www.tiktok.com/@jen_the_rn_82' );
 $linkedin  = je_mod( 'je_linkedin_url', 'https://www.linkedin.com/in/chiefspiritofficer/' );
+$youtube   = je_mod( 'je_youtube_url', '' );
 $items     = je_blog_feed_items();
 ?>
 
@@ -22,7 +23,7 @@ $items     = je_blog_feed_items();
 		<h1 class="display-sans reveal"><?php esc_html_e( 'Blog', 'jennifer-eddings' ); ?></h1>
 		<hr class="glitz-rule reveal" aria-hidden="true">
 		<p class="lead reveal"><?php esc_html_e( 'Episodes, videos, and moments from Jennifer Eddings — a living feed that updates as new stories go live.', 'jennifer-eddings' ); ?></p>
-		<p class="feed-status reveal"><?php esc_html_e( 'Updated from podcast RSS, YouTube, and site posts.', 'jennifer-eddings' ); ?></p>
+		<p class="feed-status reveal"><?php esc_html_e( 'Updated from her podcast RSS and site posts.', 'jennifer-eddings' ); ?></p>
 	</div>
 </section>
 
@@ -31,7 +32,6 @@ $items     = je_blog_feed_items();
 		<div class="appearance-filters reveal" role="group" aria-label="<?php esc_attr_e( 'Filter blog', 'jennifer-eddings' ); ?>">
 			<button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true"><?php esc_html_e( 'All', 'jennifer-eddings' ); ?></button>
 			<button type="button" class="filter-chip" data-filter="podcast" aria-pressed="false"><?php esc_html_e( 'Podcast', 'jennifer-eddings' ); ?></button>
-			<button type="button" class="filter-chip" data-filter="video" aria-pressed="false"><?php esc_html_e( 'Video', 'jennifer-eddings' ); ?></button>
 			<button type="button" class="filter-chip" data-filter="speaking" aria-pressed="false"><?php esc_html_e( 'Speaking', 'jennifer-eddings' ); ?></button>
 			<button type="button" class="filter-chip" data-filter="feature" aria-pressed="false"><?php esc_html_e( 'Feature', 'jennifer-eddings' ); ?></button>
 		</div>
@@ -72,11 +72,14 @@ $items     = je_blog_feed_items();
 				<?php if ( $instagram ) : ?>
 					<a class="link-arrow" href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Instagram', 'jennifer-eddings' ); ?></a>
 				<?php endif; ?>
-				<?php if ( $youtube ) : ?>
-					<a class="link-arrow" href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'YouTube', 'jennifer-eddings' ); ?></a>
+				<?php if ( $tiktok ) : ?>
+					<a class="link-arrow" href="<?php echo esc_url( $tiktok ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'TikTok', 'jennifer-eddings' ); ?></a>
 				<?php endif; ?>
 				<?php if ( $linkedin ) : ?>
 					<a class="link-arrow" href="<?php echo esc_url( $linkedin ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'LinkedIn', 'jennifer-eddings' ); ?></a>
+				<?php endif; ?>
+				<?php if ( $youtube ) : ?>
+					<a class="link-arrow" href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'YouTube', 'jennifer-eddings' ); ?></a>
 				<?php endif; ?>
 			</div>
 		</aside>
