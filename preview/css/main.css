@@ -204,11 +204,13 @@ em {
 
 .hero-name {
   margin: 0;
+  padding: 0.08em 0 0.14em;
   font-family: var(--font-sans);
   font-size: clamp(3.2rem, 8.5vw, 7.5rem);
   font-weight: 900;
   letter-spacing: -0.045em;
-  line-height: 0.92;
+  line-height: 1.02;
+  overflow: visible;
   background: linear-gradient(
     110deg,
     var(--plum-deep) 18%,
