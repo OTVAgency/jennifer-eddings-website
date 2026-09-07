@@ -177,7 +177,8 @@ em {
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(90deg, var(--gold), var(--gold-bright), var(--rose), var(--plum-soft), var(--gold)) 1;
   position: relative;
-  overflow: clip;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .hero-copy {
@@ -204,12 +205,12 @@ em {
 
 .hero-name {
   margin: 0;
-  padding: 0.08em 0 0.14em;
+  padding: 0.12em 0.02em 0.22em;
   font-family: var(--font-sans);
   font-size: clamp(3.2rem, 8.5vw, 7.5rem);
   font-weight: 900;
   letter-spacing: -0.045em;
-  line-height: 1.02;
+  line-height: 1.14;
   overflow: visible;
   background: linear-gradient(
     110deg,
@@ -220,9 +221,10 @@ em {
     var(--plum-deep) 72%,
     var(--rose) 88%
   );
-  background-size: 220% 100%;
+  background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   animation: name-shimmer 4.2s ease-in-out infinite;
 }
@@ -1179,7 +1181,8 @@ em {
 }
 
 .hero-name {
-  filter: drop-shadow(0 0 18px rgba(212, 160, 23, 0.35));
+  /* Soft glow without filter — filter + background-clip clips descenders */
+  text-shadow: 0 0 24px rgba(212, 160, 23, 0.28);
 }
 
 .hero-role .ital {
