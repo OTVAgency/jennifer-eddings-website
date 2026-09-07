@@ -218,22 +218,14 @@ em {
   display: inline-block;
   max-width: 100%;
   padding: 0.18em 0.06em 0.3em;
-  background-image: linear-gradient(
-    110deg,
-    var(--plum-deep) 18%,
-    var(--plum-soft) 32%,
-    var(--gold) 48%,
-    var(--gold-bright) 56%,
-    var(--plum-deep) 72%,
-    var(--rose) 88%
-  );
-  background-size: 220% 100%;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: name-shimmer 4.2s ease-in-out infinite;
+  color: var(--plum-deep);
+  -webkit-text-fill-color: var(--plum-deep);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  text-shadow: none;
+  filter: none;
+  animation: none;
 }
 
 .hero-role {
@@ -1188,8 +1180,8 @@ em {
 }
 
 .hero-name-text {
-  /* Soft glow without filter — filter + background-clip clips descenders */
   filter: none;
+  text-shadow: none;
 }
 
 .hero-role .ital {
