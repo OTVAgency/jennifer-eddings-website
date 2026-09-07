@@ -21,7 +21,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 <section class="hero" id="top">
 	<div class="hero-copy">
 		<div class="sparkle-field" data-sparkles="55" aria-hidden="true"></div>
-		<h1 class="hero-name">Jennifer<br>Eddings</h1>
+		<h1 class="hero-name"><span class="hero-name-text">Jennifer<br>Eddings</span></h1>
 		<p class="hero-role">
 			Nurse leader <span class="ital">and</span> storyteller
 		</p>

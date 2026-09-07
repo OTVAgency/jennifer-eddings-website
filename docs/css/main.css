@@ -204,16 +204,20 @@ em {
 }
 
 .hero-name {
-  display: inline-block;
-  max-width: 100%;
   margin: 0;
-  padding: 0.18em 0.06em 0.28em;
   font-family: var(--font-sans);
   font-size: clamp(3.2rem, 8.5vw, 7.5rem);
   font-weight: 900;
   letter-spacing: -0.045em;
   line-height: 1.18;
+  color: var(--plum-deep);
   overflow: visible;
+}
+
+.hero-name-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.18em 0.06em 0.3em;
   background-image: linear-gradient(
     110deg,
     var(--plum-deep) 18%,
@@ -228,7 +232,7 @@ em {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: var(--plum-deep); /* fallback if clip unsupported */
+  color: transparent;
   animation: name-shimmer 4.2s ease-in-out infinite;
 }
 
@@ -1183,9 +1187,9 @@ em {
     0 0 32px rgba(255, 226, 154, 0.35);
 }
 
-.hero-name {
+.hero-name-text {
   /* Soft glow without filter — filter + background-clip clips descenders */
-  text-shadow: 0 0 24px rgba(212, 160, 23, 0.28);
+  filter: none;
 }
 
 .hero-role .ital {
@@ -1441,6 +1445,7 @@ em {
   }
 
   .hero-name,
+  .hero-name-text,
   .link-arrow.link-solid::after,
   .sparkle,
   .foil-sheen,
@@ -1474,9 +1479,14 @@ em {
 
   .hero-name {
     color: var(--plum-deep);
+  }
+
+  .hero-name-text {
+    color: var(--plum-deep);
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
+    -webkit-text-fill-color: unset;
     filter: none;
   }
 }
