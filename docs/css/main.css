@@ -220,12 +220,13 @@ em {
   padding: 0.18em 0.06em 0.3em;
   background-image: linear-gradient(
     110deg,
-    var(--plum-deep) 18%,
-    var(--plum-soft) 32%,
-    var(--gold) 48%,
-    var(--gold-bright) 56%,
-    var(--plum-deep) 72%,
-    var(--rose) 88%
+    var(--plum-deep) 12%,
+    var(--plum) 28%,
+    var(--plum-soft) 42%,
+    #b8923a 52%,
+    var(--plum-soft) 62%,
+    var(--plum) 78%,
+    var(--plum-deep) 92%
   );
   background-size: 220% 100%;
   background-repeat: no-repeat;
@@ -236,8 +237,8 @@ em {
   color: transparent;
   text-shadow: none;
   filter: none;
-  /* One slow shimmer on load, then settle */
-  animation: name-shimmer 8.5s ease-in-out 0.35s 1 forwards;
+  /* ~8s sweep, then ~10s rest, repeat */
+  animation: name-shimmer 18s ease-in-out 0.35s infinite;
 }
 
 .hero-role {
@@ -1346,6 +1347,8 @@ em {
 
 @keyframes name-shimmer {
   0% { background-position: 0% 50%; }
+  44% { background-position: 100% 50%; }
+  44.01%,
   100% { background-position: 100% 50%; }
 }
 
