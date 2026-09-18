@@ -488,4 +488,63 @@
   }
 
   loadBlogFeed();
+  bindInquiryForm();
+
+  function bindInquiryForm() {
+    var form = document.getElementById("inquiry-form");
+    if (!form) return;
+
+    var status = document.getElementById("inquiry-status");
+    var submit = form.querySelector(".inquiry-submit");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var honey = form.querySelector(".inquiry-honey");
+      if (honey && honey.value) return;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (status) {
+        status.hidden = false;
+        status.className = "inquiry-status";
+        status.textContent = "Sending…";
+      }
+      if (submit) submit.disabled = true;
+
+      var endpoint = form.getAttribute("action") || "";
+      var body = new FormData(form);
+
+      fetch(endpoint, {
+        method: "POST",
+        body: body,
+        headers: { Accept: "application/json" },
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Send failed");
+          return res.json().catch(function () {
+            return { ok: true };
+          });
+        })
+        .then(function () {
+          form.reset();
+          if (status) {
+            status.className = "inquiry-status is-success";
+            status.textContent = "Thank you — your inquiry was sent. We’ll be in touch soon.";
+          }
+        })
+        .catch(function () {
+          if (status) {
+            status.className = "inquiry-status is-error";
+            status.textContent = "Something went wrong. Please try again in a moment.";
+          }
+        })
+        .finally(function () {
+          if (submit) submit.disabled = false;
+        });
+    });
+  }
 })();

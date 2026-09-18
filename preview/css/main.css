@@ -653,6 +653,7 @@ em {
 .pending {
   display: inline-block;
   margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -664,7 +665,7 @@ em {
 
 .social-list {
   list-style: none;
-  margin: 0;
+  margin: 2rem 0 0;
   padding: 0;
   display: grid;
   gap: 0;
@@ -692,6 +693,109 @@ em {
 
 .social-list a:hover {
   color: var(--plum-soft);
+}
+
+.inquiry-form {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.75rem 1.5rem 1.85rem;
+  background:
+    linear-gradient(160deg, rgba(255, 253, 249, 0.96), rgba(246, 232, 244, 0.55));
+  border: 1px solid var(--line-gold);
+  box-shadow: 0 18px 40px rgba(36, 25, 43, 0.06);
+}
+
+.inquiry-form-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--plum);
+}
+
+.inquiry-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.inquiry-field span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--plum-deep);
+}
+
+.inquiry-field span em {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea {
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(36, 25, 43, 0.16);
+  border-radius: 0;
+  background: rgba(255, 250, 247, 0.92);
+  color: var(--plum-deep);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.35;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inquiry-field textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.18);
+}
+
+.inquiry-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.inquiry-submit {
+  justify-self: start;
+  margin-top: 0.35rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.inquiry-submit[disabled] {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.inquiry-status {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--plum);
+}
+
+.inquiry-status.is-error {
+  color: #8a2f45;
+}
+
+.inquiry-status.is-success {
+  color: var(--plum-deep);
 }
 
 .site-footer {

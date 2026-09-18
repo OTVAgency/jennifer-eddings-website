@@ -143,27 +143,76 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 				<?php else : ?>
 					<span class="pending"><?php esc_html_e( 'Public email coming soon', 'jennifer-eddings' ); ?></span>
 				<?php endif; ?>
+
+				<ul class="social-list reveal-stagger">
+					<?php if ( $podcast ) : ?>
+						<li class="reveal"><a href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">Podcast <span><?php esc_html_e( 'Listen', 'jennifer-eddings' ); ?></span></a></li>
+					<?php endif; ?>
+					<?php if ( $youtube ) : ?>
+						<li class="reveal"><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer">YouTube <span><?php esc_html_e( 'Call Light Collective', 'jennifer-eddings' ); ?></span></a></li>
+					<?php endif; ?>
+					<?php if ( $instagram ) : ?>
+						<li class="reveal"><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span>@jen_the_rn_82</span></a></li>
+					<?php endif; ?>
+					<?php if ( $tiktok ) : ?>
+						<li class="reveal"><a href="<?php echo esc_url( $tiktok ); ?>" target="_blank" rel="noopener noreferrer">TikTok <span>@jen_the_rn_82</span></a></li>
+					<?php endif; ?>
+					<?php if ( $linkedin ) : ?>
+						<li class="reveal"><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" rel="noopener noreferrer">LinkedIn <span>chiefspiritofficer</span></a></li>
+					<?php endif; ?>
+					<?php if ( $facebook ) : ?>
+						<li class="reveal"><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener noreferrer">Facebook <span>Jennifer Eddings</span></a></li>
+					<?php endif; ?>
+				</ul>
 			</div>
-			<ul class="social-list reveal-stagger">
-				<?php if ( $podcast ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $podcast ); ?>" target="_blank" rel="noopener noreferrer">Podcast <span><?php esc_html_e( 'Listen', 'jennifer-eddings' ); ?></span></a></li>
-				<?php endif; ?>
-				<?php if ( $youtube ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" rel="noopener noreferrer">YouTube <span><?php esc_html_e( 'Call Light Collective', 'jennifer-eddings' ); ?></span></a></li>
-				<?php endif; ?>
-				<?php if ( $instagram ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span>@jen_the_rn_82</span></a></li>
-				<?php endif; ?>
-				<?php if ( $tiktok ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $tiktok ); ?>" target="_blank" rel="noopener noreferrer">TikTok <span>@jen_the_rn_82</span></a></li>
-				<?php endif; ?>
-				<?php if ( $linkedin ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" rel="noopener noreferrer">LinkedIn <span>chiefspiritofficer</span></a></li>
-				<?php endif; ?>
-				<?php if ( $facebook ) : ?>
-					<li class="reveal"><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener noreferrer">Facebook <span>Jennifer Eddings</span></a></li>
-				<?php endif; ?>
-			</ul>
+
+			<?php
+			$form_to = $email ? $email : 'cory@otv.agency';
+			$form_action = 'https://formsubmit.co/ajax/' . rawurlencode( $form_to );
+			?>
+			<form
+				class="inquiry-form reveal"
+				id="inquiry-form"
+				action="<?php echo esc_url( $form_action ); ?>"
+				method="POST"
+				novalidate
+			>
+				<p class="inquiry-form-label"><?php esc_html_e( 'Booking & collaboration inquiry', 'jennifer-eddings' ); ?></p>
+				<input type="hidden" name="_subject" value="<?php echo esc_attr__( 'Jennifer Eddings — website inquiry', 'jennifer-eddings' ); ?>">
+				<input type="hidden" name="_template" value="table">
+				<input type="text" name="_honey" class="inquiry-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+				<label class="inquiry-field">
+					<span><?php esc_html_e( 'Name', 'jennifer-eddings' ); ?></span>
+					<input type="text" name="name" required autocomplete="name" placeholder="<?php esc_attr_e( 'Your name', 'jennifer-eddings' ); ?>">
+				</label>
+				<label class="inquiry-field">
+					<span><?php esc_html_e( 'Email', 'jennifer-eddings' ); ?></span>
+					<input type="email" name="email" required autocomplete="email" placeholder="you@email.com">
+				</label>
+				<label class="inquiry-field">
+					<span><?php esc_html_e( 'Organization', 'jennifer-eddings' ); ?> <em><?php esc_html_e( '(optional)', 'jennifer-eddings' ); ?></em></span>
+					<input type="text" name="organization" autocomplete="organization" placeholder="<?php esc_attr_e( 'Podcast, brand, or event', 'jennifer-eddings' ); ?>">
+				</label>
+				<label class="inquiry-field">
+					<span><?php esc_html_e( 'I’m interested in', 'jennifer-eddings' ); ?></span>
+					<select name="interest" required>
+						<option value="" disabled selected><?php esc_html_e( 'Select one', 'jennifer-eddings' ); ?></option>
+						<option value="Speaking / keynote"><?php esc_html_e( 'Speaking / keynote', 'jennifer-eddings' ); ?></option>
+						<option value="Podcast guest or feature"><?php esc_html_e( 'Podcast guest or feature', 'jennifer-eddings' ); ?></option>
+						<option value="Sponsorship / partnership"><?php esc_html_e( 'Sponsorship / partnership', 'jennifer-eddings' ); ?></option>
+						<option value="Media / interview"><?php esc_html_e( 'Media / interview', 'jennifer-eddings' ); ?></option>
+						<option value="Something else"><?php esc_html_e( 'Something else', 'jennifer-eddings' ); ?></option>
+					</select>
+				</label>
+				<label class="inquiry-field">
+					<span><?php esc_html_e( 'Message', 'jennifer-eddings' ); ?></span>
+					<textarea name="message" rows="5" required placeholder="<?php esc_attr_e( 'Tell Jennifer a bit about the opportunity…', 'jennifer-eddings' ); ?>"></textarea>
+				</label>
+
+				<button type="submit" class="link-arrow link-solid inquiry-submit"><?php esc_html_e( 'Send inquiry', 'jennifer-eddings' ); ?></button>
+				<p class="inquiry-status" id="inquiry-status" role="status" aria-live="polite" hidden></p>
+			</form>
 		</div>
 	</div>
 </section>
