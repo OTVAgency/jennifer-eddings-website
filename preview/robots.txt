@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://otvagency.github.io/jennifer-eddings-website/sitemap.xml
