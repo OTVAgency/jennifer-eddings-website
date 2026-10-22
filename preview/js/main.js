@@ -524,22 +524,33 @@
         headers: { Accept: "application/json" },
       })
         .then(function (res) {
-          if (!res.ok) throw new Error("Send failed");
-          return res.json().catch(function () {
-            return { ok: true };
+          return res.json().then(function (data) {
+            var ok =
+              res.ok &&
+              data &&
+              String(data.success).toLowerCase() !== "false";
+            if (!ok) {
+              var err = new Error(
+                (data && data.message) || "Send failed"
+              );
+              throw err;
+            }
+            return data;
           });
         })
         .then(function () {
           form.reset();
           if (status) {
             status.className = "inquiry-status is-success";
-            status.textContent = "Thank you — your inquiry was sent. We’ll be in touch soon.";
+            status.textContent =
+              "Thank you — your inquiry was sent. We’ll be in touch soon.";
           }
         })
         .catch(function () {
           if (status) {
             status.className = "inquiry-status is-error";
-            status.textContent = "Something went wrong. Please try again in a moment.";
+            status.textContent =
+              "Something went wrong. Please try again in a moment.";
           }
         })
         .finally(function () {

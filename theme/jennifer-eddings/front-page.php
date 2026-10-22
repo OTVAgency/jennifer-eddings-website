@@ -180,6 +180,7 @@ $podcast   = je_mod( 'je_podcast_url', 'https://thecalllightco.buzzsprout.com' )
 				<p class="inquiry-form-label"><?php esc_html_e( 'Booking & collaboration inquiry', 'jennifer-eddings' ); ?></p>
 				<input type="hidden" name="_subject" value="<?php echo esc_attr__( 'Jennifer Eddings — website inquiry', 'jennifer-eddings' ); ?>">
 				<input type="hidden" name="_template" value="table">
+				<input type="hidden" name="_captcha" value="false">
 				<input type="text" name="_honey" class="inquiry-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
 				<label class="inquiry-field">
